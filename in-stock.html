@@ -419,7 +419,7 @@
             </a>
 
             <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+                <i class="fa-solid fa-bars toggler-bars"></i><i class="fa-solid fa-xmark toggler-close"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -431,7 +431,7 @@
                     <li class="nav-item"><a class="nav-link" href="about.html">За нас</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Контакти</a></li>
                 </ul>
-                <a href="inquiry.html" class="btn btn-gold d-none d-lg-inline-block">Направи запитване &rarr;</a>
+                <a href="inquiry.html" class="btn btn-gold d-block d-lg-inline-block mt-3 mt-lg-0">Направи запитване &rarr;</a>
             </div>
         </div>
     </nav>
@@ -441,7 +441,7 @@
             <a href="sold-cars.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Към Продадени автомобили</a>
             <br>
             <span class="badge-sold">Продаден</span>
-            <h1 class="hero-title">BMW X5 30d M Sport</h1>
+            <h1 class="hero-title" style="max-width: 300px;">BMW X5 30d M Sport</h1>
 
             <!-- Stats Bar -->
             <div class="row g-0 stats-row">
@@ -1060,6 +1060,16 @@
             const next = (currentSlide + direction + galleryImages.length) % galleryImages.length;
             setGallerySlide(next);
         }
+    </script>
+    <script>
+        (function () {
+            var toggler = document.querySelector(".navbar-toggler");
+            var collapseEl = document.getElementById("navbarNav");
+            if (toggler && collapseEl) {
+                collapseEl.addEventListener("shown.bs.collapse", function () { toggler.classList.add("is-open"); });
+                collapseEl.addEventListener("hidden.bs.collapse", function () { toggler.classList.remove("is-open"); });
+            }
+        })();
     </script>
 </body>
 </html>

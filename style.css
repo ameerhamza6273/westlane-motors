@@ -95,6 +95,60 @@ body {
     border-radius: 2px;
 }
 
+/* Mobile menu toggle button: solid backdrop + full-opacity icon so it stays
+   visible over any hero photo, plus a hamburger/close icon swap */
+.navbar-toggler {
+    border: none;
+    background-color: rgba(11, 15, 25, 0.55);
+    border-radius: 6px;
+    width: 42px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+.navbar-toggler .toggler-bars,
+.navbar-toggler .toggler-close {
+    color: #ffffff;
+    font-size: 1.05rem;
+}
+.navbar-toggler .toggler-close {
+    display: none;
+}
+.navbar-toggler.is-open .toggler-bars {
+    display: none;
+}
+.navbar-toggler.is-open .toggler-close {
+    display: block;
+}
+
+/* Mobile dropdown menu: give it a solid opaque panel so links are legible
+   over whatever page content sits behind the absolutely-positioned navbar */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: #0b0f19;
+        margin-top: 12px;
+        padding: 18px 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+    .navbar-nav {
+        margin-bottom: 4px;
+    }
+    .nav-link {
+        margin: 0;
+        padding: 10px 0 !important;
+        display: block;
+    }
+    .nav-link.active::after {
+        display: none;
+    }
+}
+
 /* Hero Banner Section */
 .hero-section {
     position: relative;
@@ -275,6 +329,19 @@ body {
     font-size: 0.82rem;
     color: #9ca3af;
     margin: 0;
+}
+@media (max-width: 575.98px) {
+    .trust-stat-box {
+        gap: 12px;
+    }
+    .trust-stat-icon {
+        font-size: 1.5rem;
+        width: 36px;
+    }
+    .trust-stat-title {
+        font-size: 1.05rem;
+        line-height: 1.25;
+    }
 }
 
 /* Core Values List */
@@ -867,4 +934,15 @@ footer ul li a:hover {
     color: var(--text-muted);
     font-size: 0.92rem;
     line-height: 1.65;
+}
+
+/* Section header rows (heading + "view all" link/button) used across
+   index.html, inquiry.html, in-stock.html, process.html — Bootstrap's
+   d-flex/justify-content-between stays nowrap by default, which crams
+   a wrapped multi-line heading against the button on narrow screens. */
+@media (max-width: 575.98px) {
+    .d-flex.justify-content-between.align-items-end {
+        flex-wrap: wrap;
+        row-gap: 14px;
+    }
 }

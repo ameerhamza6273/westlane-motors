@@ -1,0 +1,16 @@
+{
+    "mcpServers": {
+        "novamira-andresagudelo-wo": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@automattic/mcp-wordpress-remote@latest"
+            ],
+            "env": {
+                "WP_API_URL": "https://andresagudelo.work/purelabs/index.php?rest_route=/mcp/novamira",
+                "WP_API_USERNAME": "admin",
+                "WP_API_PASSWORD": "1TutzaAb4E93G2G5Cft0lkE7"
+            }
+        }
+    }
+}
