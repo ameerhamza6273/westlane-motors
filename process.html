@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нашият процес - Westlane Motors</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Shared Site Styles -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-gold: #dfb175;
+            --primary-gold-hover: #c99b60;
+            --dark-bg: #0b0f17;
+            --card-dark: #121824;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --body-bg: #f8fafc;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--body-bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .btn-gold {
+            background-color: var(--primary-gold);
+            color: #0b0f17;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 10px 22px;
+            border-radius: 6px;
+            border: none;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--primary-gold-hover);
+            color: #0b0f17;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(11, 15, 23, 0.75), rgba(11, 15, 23, 0.95)),
+                        url('https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            padding: 150px 0 60px;
+            color: #ffffff;
+        }
+
+        .hero-subtitle {
+            color: var(--primary-gold);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 400;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+
+        .hero-title .text-gold-accent {
+            color: var(--primary-gold);
+            font-weight: 800;
+        }
+
+        .hero-desc {
+            color: #94a3b8;
+            font-size: 1.05rem;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .hero-pill-bar {
+            margin-top: 45px;
+            padding-top: 28px;
+        }
+
+        .pill-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pill-icon {
+            color: var(--primary-gold);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            width: 28px;
+            text-align: center;
+        }
+
+        .pill-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        /* 7 Steps Section */
+        .process-steps-section {
+            padding: 90px 0;
+        }
+
+        .section-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .section-title-large {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .process-steps-list {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .process-steps-list::before {
+            content: '';
+            position: absolute;
+            top: 22px;
+            bottom: 22px;
+            left: 42px;
+            width: 2px;
+            background-color: rgba(223, 177, 117, 0.35);
+            z-index: 0;
+        }
+
+        .step-row {
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .step-num-badge {
+            position: relative;
+            z-index: 1;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: var(--primary-gold);
+            color: #0b0f17;
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .step-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .step-card-dark {
+            background-color: var(--card-dark);
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            height: 100%;
+            min-height: 160px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .step-card-img {
+            width: 50%;
+            object-fit: cover;
+        }
+
+        .step-card-info {
+            width: 50%;
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #ffffff;
+        }
+
+        .step-card-info i {
+            color: var(--primary-gold);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .step-card-info p {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Full Process Dark Banner */
+        .full-process-banner {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            padding: 80px 0;
+            position: relative;
+            background-image: linear-gradient(90deg, rgba(11,15,23,0.95) 0%, rgba(11,15,23,0.85) 100%), 
+                              url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .check-list-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px 30px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+
+        .check-item i {
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            background: rgba(223, 177, 117, 0.15);
+            padding: 4px;
+            border-radius: 4px;
+        }
+
+        /* Timeframe Section */
+        .timeframe-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .time-step-bar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 40px;
+        }
+
+        .time-step-bar::before {
+            content: '';
+            position: absolute;
+            top: 43px;
+            left: 5%;
+            right: 5%;
+            height: 1px;
+            background-color: #e2e8f0;
+            z-index: 1;
+        }
+
+        .time-step-item {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 10px;
+            flex: 1;
+        }
+
+        .time-step-icon {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 14px;
+        }
+
+        .time-step-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary-gold);
+            margin: 0 auto 15px;
+        }
+
+        .time-step-title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .time-step-sub {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Real Deliveries */
+        .real-deliveries-section {
+            padding: 80px 0;
+        }
+
+        .delivery-card {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .delivery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .delivery-img-wrap {
+            position: relative;
+        }
+
+        .delivery-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .delivery-badge {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        .delivery-card-body {
+            padding: 15px 18px;
+        }
+
+        .delivery-card-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .delivery-route {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .delivery-flag {
+            width: 16px;
+            height: 12px;
+            border-radius: 2px;
+        }
+
+        /* FAQ Section (accordion styling shared via style.css) */
+        .faq-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="images/Logo-white.png" alt="Westlane Motors">
+            </a>
+
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Начало</a></li>
+                    <li class="nav-item"><a class="nav-link" href="in-stock.html">В наличност</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Продадени</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="process.html">Нашият процес</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">За нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Контакти</a></li>
+                </ul>
+                <a href="inquiry.html" class="btn btn-gold d-none d-lg-inline-block">Направи запитване &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="hero-subtitle">НАШИЯТ ПРОЦЕС</span>
+                    <h1 class="hero-title">От желание<br><span class="text-gold-accent">до ключовете.</span></h1>
+                    <p class="hero-desc">Прозрачен, сигурен и доказан процес за внос на автомобили от Западна Европа и Канада. Ние се грижим за всичко, а вие получавате най-добрия автомобил.</p>
+                </div>
+            </div>
+
+            <div class="hero-pill-bar">
+                <div class="row g-3">
+                    <div class="col-md-3 col-6">
+                        <div class="pill-item">
+                            <div class="pill-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <p class="pill-text">Реални автомобили с реална история</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="pill-item">
+                            <div class="pill-icon"><i class="fa-solid fa-globe"></i></div>
+                            <p class="pill-text">Проверени източници</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="pill-item">
+                            <div class="pill-icon"><i class="fa-solid fa-truck-front"></i></div>
+                            <p class="pill-text">Пълен процес от А до Я</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="pill-item">
+                            <div class="pill-icon"><i class="fa-solid fa-headset"></i></div>
+                            <p class="pill-text">Лично отношение и експертна консултация</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7 Steps Section -->
+    <section class="process-steps-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <span class="section-tag">7 СТЪПКИ ДО ВАШИЯ АВТОМОБИЛ</span>
+                    <h2 class="section-title-large">Как работим?</h2>
+                </div>
+                <div class="col-lg-6 d-flex align-items-end">
+                    <p class="text-muted mb-0">Ние се грижим за целия процес – от избора и проверката на автомобила до доставката и регистрацията в България. Всичко е прозрачно, ясно и без скрити разходи.</p>
+                </div>
+            </div>
+
+            <!-- Steps Rows -->
+            <div class="process-steps-list">
+                <!-- Step 1 -->
+                <div class="row step-row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <div class="d-flex gap-3">
+                            <div class="step-num-badge">1</div>
+                            <div class="step-content">
+                                <h4>Запитване и консултация</h4>
+                                <p>Споделете какъв автомобил търсите – марка, модел, бюджет и предпочитания. Нашият екип ще ви консултира и ще ви предложи най-добрите наличности на пазара.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="step-card-dark">
+                            <img src="images/process-1.png" class="step-card-img" alt="Consultation">
+                            <div class="step-card-info">
+                                <i class="fa-solid fa-user-tie"></i>
+                                <p>Индивидуален подход и експертна консултация</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="row step-row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <div class="d-flex gap-3">
+                            <div class="step-num-badge">2</div>
+                            <div class="step-content">
+                                <h4>Подбор на автомобили</h4>
+                                <p>Предоставяме ви подбрани предложения от проверени аукциони и дилъри в Западна Европа и Канада. Включваме подробна информация, снимки, истории и пазарен анализ.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="step-card-dark">
+                            <img src="images/process-1.png" class="step-card-img" alt="Selection">
+                            <div class="step-card-info">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <p>Достъп до най-добри пазари и цени</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="row step-row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <div class="d-flex gap-3">
+                            <div class="step-num-badge">3</div>
+                            <div class="step-content">
+                                <h4>Проверка и анализ</h4>
+                                <p>Извършваме пълна проверка на историята, техническото състояние и реалния пробег на автомобила. При нужда организираме независим оглед на място.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="step-card-dark">
+                            <img src="images/process-1.png" class="step-card-img" alt="Inspection">
+                            <div class="step-card-info">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                                <p>Проверени автомобили с реална история</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="row step-row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <div class="d-flex gap-3">
+                            <div class="step-num-badge">4</div>
+                            <div class="step-content">
+                                <h4>Участие и покупка</h4>
+                                <p>Ние участваме вместо вас на аукциона или договаряме покупката директно с дилър. След одобрение финализираме покупката и подготвяме всички документи.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="step-card-dark">
+                            <img src="images/process-1.png" class="step-card-img" alt="Bidding">
+                            <div class="step-card-info">
+                                <i class="fa-solid fa-gavel"></i>
+                                <p>Ние се грижим за цялата комуникация и покупка</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="row step-row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <div class="d-flex gap-3">
+                            <div class="step-num-badge">5</div>
+                            <div class="step-content">
+                                <h4>Транспорт и доставка</h4>
+                                <p>Организираме транспорт по суша или море до България с доказани логистични партньори. Следим автомобила до пристигането му.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="step-card-dark">
+                            <img src="images/process-1.png" class="step-card-img" alt="Transport">
+                            <div class="step-card-info">
+                                <i class="fa-solid fa-truck-ramp-box"></i>
+                                <p>Сигурен и застрахован транспорт</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="row step-row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <div class="d-flex gap-3">
+                            <div class="step-num-badge">6</div>
+                            <div class="step-content">
+                                <h4>Митническо оформяне</h4>
+                                <p>Подготвяме всички необходими документи, извършваме митническо оформяне и плащане на дължимите такси.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="step-card-dark">
+                            <img src="images/process-1.png" class="step-card-img" alt="Customs">
+                            <div class="step-card-info">
+                                <i class="fa-solid fa-file-contract"></i>
+                                <p>Ние се грижим за всички документи</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="row step-row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <div class="d-flex gap-3">
+                            <div class="step-num-badge">7</div>
+                            <div class="step-content">
+                                <h4>Регистрация и предаване</h4>
+                                <p>След пристигане в България регистрираме автомобила и го предаваме готов за ползване – с пълна документация и съдействие от наша страна.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="step-card-dark">
+                            <img src="images/process-1.png" class="step-card-img" alt="Handover">
+                            <div class="step-card-info">
+                                <i class="fa-solid fa-key"></i>
+                                <p>Получавате автомобила готов за път</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Process Dark Banner -->
+    <section class="full-process-banner">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <span class="section-tag text-warning">КАКВО ВКЛЮЧВА НАШЕТО СЪДЕЙСТВИЕ?</span>
+                    <h2 class="text-white fw-bold my-3 fs-1">Пълен процес<br>без компромиси.</h2>
+                    <p class="text-secondary mb-4 fs-6">Ние се грижим за всеки детайл, за да получите автомобила си безопасно, бързо и без излишен стрес. Вие просто избирате – ние правим останалото.</p>
+                    <a href="contact.html" class="btn btn-gold">Направи запитване <i class="fa-solid fa-arrow-right fs-12"></i></a>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="check-list-grid">
+                        <div class="check-item"><i class="fa-solid fa-check"></i> Подбор на най-добрите оферти</div>
+                        <div class="check-item"><i class="fa-solid fa-check"></i> Плащане на всички такси</div>
+                        <div class="check-item"><i class="fa-solid fa-check"></i> Пълна проверка на история и състояние</div>
+                        <div class="check-item"><i class="fa-solid fa-check"></i> Регистрация в България</div>
+                        <div class="check-item"><i class="fa-solid fa-check"></i> Участие на аукциони и покупка</div>
+                        <div class="check-item"><i class="fa-solid fa-check"></i> Съдействие с документи</div>
+                        <div class="check-item"><i class="fa-solid fa-check"></i> Транспорт и застраховка</div>
+                        <div class="check-item"><i class="fa-solid fa-check"></i> Постоянна комуникация и статус</div>
+                        <div class="check-item"><i class="fa-solid fa-check"></i> Митническо оформяне</div>
+                        <div class="check-item"><i class="fa-solid fa-check"></i> Поддръжка и консултация след доставка</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeframe Section -->
+    <section class="timeframe-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-4">
+                    <span class="section-tag">СРЕДНА ВКЛЮЧВА РАМКА</span>
+                    <h2 class="section-title-large mb-2">Колко време отнема?</h2>
+                    <p class="text-muted mb-0">Процесът обикновено отнема между 4 и 8 седмици в зависимост от локацията на автомобила и начина на транспорт.</p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="time-step-bar">
+                        <div class="time-step-item">
+                            <div class="time-step-icon"><i class="fa-solid fa-car"></i></div>
+                            <div class="time-step-dot"></div>
+                            <div class="time-step-title">1-3 дни</div>
+                            <div class="time-step-sub">Подбор и покупка</div>
+                        </div>
+                        <div class="time-step-item">
+                            <div class="time-step-icon"><i class="fa-solid fa-ship"></i></div>
+                            <div class="time-step-dot"></div>
+                            <div class="time-step-title">1-4 седмици</div>
+                            <div class="time-step-sub">Транспорт</div>
+                        </div>
+                        <div class="time-step-item">
+                            <div class="time-step-icon"><i class="fa-solid fa-file-lines"></i></div>
+                            <div class="time-step-dot"></div>
+                            <div class="time-step-title">3-7 дни</div>
+                            <div class="time-step-sub">Митническо оформяне</div>
+                        </div>
+                        <div class="time-step-item">
+                            <div class="time-step-icon"><i class="fa-solid fa-link"></i></div>
+                            <div class="time-step-dot"></div>
+                            <div class="time-step-title">1-3 дни</div>
+                            <div class="time-step-sub">Регистрация и предаване</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Deliveries Section -->
+    <section class="real-deliveries-section">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+                <div>
+                    <span class="section-tag">ПРИМЕРИ ОТ РЕАЛНИ ДОСТАВКИ</span>
+                    <h2 class="section-title-large mb-0">От аукциона до България</h2>
+                </div>
+                <a href="sold-cars.html" class="btn btn-outline-dark btn-sm rounded-3">Виж всички продадени <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="row g-4">
+                <!-- Delivery 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="delivery-card">
+                        <div class="delivery-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=600&q=80" alt="BMW X5">
+                            <div class="delivery-badge"><i class="fa-solid fa-arrow-down"></i></div>
+                        </div>
+                        <div class="delivery-card-body">
+                            <h5 class="delivery-card-title">BMW X5 30d</h5>
+                            <div class="delivery-route">
+                                🇩🇪 Германия &rarr; 🇧🇬 България
+                            </div>
+                            <div class="delivery-route mt-1">🇧🇬 28 дни</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="delivery-card">
+                        <div class="delivery-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=600&q=80" alt="Mercedes">
+                            <div class="delivery-badge"><i class="fa-solid fa-arrow-down"></i></div>
+                        </div>
+                        <div class="delivery-card-body">
+                            <h5 class="delivery-card-title">Mercedes-Benz E 300 de</h5>
+                            <div class="delivery-route">
+                                🇧🇪 Белгия &rarr; 🇧🇬 България
+                            </div>
+                            <div class="delivery-route mt-1">🇧🇬 32 дни</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="delivery-card">
+                        <div class="delivery-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=600&q=80" alt="Audi Q8">
+                            <div class="delivery-badge"><i class="fa-solid fa-arrow-down"></i></div>
+                        </div>
+                        <div class="delivery-card-body">
+                            <h5 class="delivery-card-title">Audi Q8 50 TDI</h5>
+                            <div class="delivery-route">
+                                🇳🇱 Холандия &rarr; 🇧🇬 България
+                            </div>
+                            <div class="delivery-route mt-1">🇧🇬 31 дни</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="delivery-card">
+                        <div class="delivery-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Porsche Cayenne">
+                            <div class="delivery-badge"><i class="fa-solid fa-arrow-down"></i></div>
+                        </div>
+                        <div class="delivery-card-body">
+                            <h5 class="delivery-card-title">Porsche Cayenne</h5>
+                            <div class="delivery-route">
+                                🇩🇪 Германия &rarr; 🇧🇬 България
+                            </div>
+                            <div class="delivery-route mt-1">🇧🇬 29 дни</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <span class="section-tag">ЧЕСТО ЗАДАВАНИ ВЪПРОСИ</span>
+                    <h2 class="section-title-large my-3">Имате въпроси?</h2>
+                    <p class="text-muted mb-4">Намерете отговори на най-често задаваните въпроси или се свържете с нас директно.</p>
+                    <a href="contact.html" class="btn btn-gold">Свържете се с нас <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="col-lg-7">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Мога ли да избера конкретен автомобил?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Да, абсолютно! Можете да ни изпратите конкретна обява или линк към автомобил, който сте харесали, и ние ще извършим пълна проверка.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Как се проверява историята на автомобила?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Използваме официални бази данни от производителите, застрахователни доклади, както и независими инспекции на място от наши доверени партньори.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Какви са всички разходи?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Всички разходи (цена на автомобила, транспорт, митнически такси, комисионна и регистрация) се изчисляват предварително и са сключени в договора.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Колко време отнема доставката?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Обикновено между 3 и 6 седмици от момента на покупка до пълната регистрация в България.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Какъв тип гаранция предлагате?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Предлагаме възможност за допълнителна гаранция, както и съдействие с фабричната гаранция, ако автомобилът все още я притежава.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    Как се извършва плащането?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Плащането се извършва поетапно по банков път с ясно описани условия и гаранционни клаузи в официален договор.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-inline-block mb-3" href="index.html">
+                        <img src="images/Logo-white.png" alt="Westlane Motors" style="max-height:55px;">
+                    </a>
+                    <p class="mb-4" style="line-height:1.6;font-size: 15px; max-width: 368px;">
+                        Внос на висококачествени автомобили от Западна Европа и Канада. Прозрачен процес, реални автомобили и пълно съдействие до регистрация в България.
+                    </p>
+                    <div class="footer-social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h6>Бързи връзки</h6>
+                    <ul>
+                        <li><a href="index.html">Начало</a></li>
+                        <li><a href="in-stock.html">В наличност</a></li>
+                        <li><a href="#">Продадени</a></li>
+                        <li><a href="process.html">Нашият процес</a></li>
+                        <li><a href="about.html">За нас</a></li>
+                        <li><a href="contact.html">Контакти</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <h6>Контакти</h6>
+                    <ul class="small">
+                        <li class="mb-2"><i class="fa-solid fa-phone me-2 text-secondary"></i> +359 88 123 4567</li>
+                        <li class="mb-2"><i class="fa-solid fa-envelope me-2 text-secondary"></i> office@westlanemotors.bg</li>
+                        <li class="mb-2"><i class="fa-solid fa-location-dot me-2 text-secondary"></i> София, България</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3">
+                    <h6>Работно време</h6>
+                    <p class="small text-secondary mb-1">Понеделник - Петък</p>
+                    <p class="small text-white fw-semibold mb-3">09.00 - 18.00</p>
+                    <p class="small text-secondary mb-1">Събота</p>
+                    <p class="small text-white fw-semibold">По предварителна уговорка</p>
+                </div>
+            </div>
+
+            <div class="pt-4 border-top border-secondary border-opacity-25 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small">
+                <div>© 2024 Westlane Motors. Всички права запазени.</div>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-secondary text-decoration-none">Политика за поверителност</a>
+                    <span>|</span>
+                    <a href="#" class="text-secondary text-decoration-none">Общи условия</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Направи запитване - Westlane Motors</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Shared Site Styles -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-gold: #dfb175;
+            --primary-gold-hover: #c99b60;
+            --dark-bg: #0b0f17;
+            --card-dark: #121824;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --body-bg: #f8fafc;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--body-bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .btn-gold {
+            background-color: var(--primary-gold);
+            color: #0b0f17;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 10px 22px;
+            border-radius: 6px;
+            border: none;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--primary-gold-hover);
+            color: #0b0f17;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Header */
+        .hero-section {
+            background: linear-gradient(rgba(11, 15, 23, 0.8), rgba(11, 15, 23, 0.95)),
+                        url('https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            padding: 150px 0 60px;
+            color: #ffffff;
+        }
+
+        .hero-tag {
+            color: var(--primary-gold);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 10px 0 20px;
+            line-height: 1.15;
+        }
+
+        .hero-desc {
+            color: #94a3b8;
+            font-size: 1rem;
+            max-width: 550px;
+            line-height: 1.6;
+        }
+
+        .hero-pill-bar {
+            background-color: rgba(18, 24, 36, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .pill-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pill-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: rgba(223, 177, 117, 0.1);
+            color: var(--primary-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .pill-text {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        /* Form Wizard Section */
+        .form-section { padding: 80px 0; }
+
+        .wizard-card {
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .step-indicators {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 35px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .step-item.active { color: var(--text-dark); }
+
+        .step-num {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .step-item.active .step-num {
+            background: var(--text-dark);
+            color: #ffffff;
+        }
+
+        .form-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .form-control, .form-select {
+            padding: 10px 14px;
+            font-size: 0.85rem;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            background-color: #f8fafc;
+        }
+
+        .form-control:focus, .form-select:focus {
+            background-color: #ffffff;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(223, 177, 117, 0.2);
+        }
+
+        /* Dark Process Grid */
+        .dark-process-section {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            padding: 80px 0;
+        }
+
+        .process-box {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 25px 20px;
+            height: 100%;
+        }
+
+        .process-step-num {
+            font-size: 0.75rem;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--primary-gold);
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Features Section */
+        .features-section { padding: 80px 0; background-color: #ffffff; }
+
+        .feature-item-icon {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        /* Recent Deliveries Dark */
+        .recent-section {
+            background-color: #0b0f17;
+            color: #ffffff;
+            padding: 80px 0;
+        }
+
+        .car-dark-card {
+            background-color: #121824;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+
+        .car-dark-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .car-dark-body { padding: 18px; }
+
+        /* Country Cards */
+        .countries-section { padding: 80px 0; }
+
+        .country-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 220px;
+            color: #ffffff;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            text-decoration: none;
+        }
+
+        .country-card img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+
+        .country-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(11,15,23,0.9), rgba(11,15,23,0.2));
+            z-index: 2;
+        }
+
+        .country-content { position: relative; z-index: 3; }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="images/Logo-white.png" alt="Westlane Motors">
+            </a>
+
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Начало</a></li>
+                    <li class="nav-item"><a class="nav-link" href="in-stock.html">В наличност</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Продадени</a></li>
+                    <li class="nav-item"><a class="nav-link" href="process.html">Нашият процес</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">За нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Контакти</a></li>
+                </ul>
+                <a href="inquiry.html" class="btn btn-gold d-none d-lg-inline-block">Направи запитване &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="hero-tag">НАПРАВИ ЗАПИТВАНЕ</span>
+                    <h1 class="hero-title">Намери своя автомобил<br>от Западна Европа<br>и Канада.</h1>
+                    <p class="hero-desc">Споделете с нас какъв автомобил търсите и ние ще ти предложим най-добрите наличности от доверени източници в Западна Европа и Канада.</p>
+                </div>
+            </div>
+
+            <div class="hero-pill-bar">
+                <div class="row g-3">
+                    <div class="col-md-3 col-6">
+                        <div class="pill-item">
+                            <div class="pill-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <p class="pill-text">Достъп до най-добри пазари и търгове</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="pill-item">
+                            <div class="pill-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <p class="pill-text">Проверени автомобили с пълна история</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="pill-item">
+                            <div class="pill-icon"><i class="fa-solid fa-headset"></i></div>
+                            <p class="pill-text">Индивидуален подход и експертна консултация</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="pill-item">
+                            <div class="pill-icon"><i class="fa-solid fa-truck"></i></div>
+                            <p class="pill-text">Пълно съдействие до доставка и регистрация</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Form Wizard Section -->
+    <section class="form-section">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <span class="text-uppercase text-muted fw-bold fs-12">ФОРМА ЗА ЗАПИТВАНЕ</span>
+                    <h2 class="fw-bold my-2 fs-2">Разкажи ни какъв автомобил търсиш</h2>
+                    <p class="text-muted fs-6 mb-4">Попълни формата и ние ще ти изпратим персонализирани предложения, включително реални наличности от Западна Европа и Канада, цени, срокове и всички детайли.</p>
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-4 shadow-sm" alt="BMW SUV">
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="wizard-card">
+                        <!-- Step Indicators -->
+                        <div class="step-indicators">
+                            <div class="step-item active">
+                                <div class="step-num">1</div> Автомобил
+                            </div>
+                            <div class="step-item">
+                                <div class="step-num">2</div> Предпочитания
+                            </div>
+                            <div class="step-item">
+                                <div class="step-num">3</div> Вашите данни
+                            </div>
+                        </div>
+
+                        <!-- Form Steps -->
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Марка *</label>
+                                    <select class="form-select">
+                                        <option selected>Избери марка</option>
+                                        <option>BMW</option>
+                                        <option>Mercedes-Benz</option>
+                                        <option>Audi</option>
+                                        <option>Porsche</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Модел *</label>
+                                    <select class="form-select">
+                                        <option selected>Избери модел</option>
+                                        <option>X5</option>
+                                        <option>GLE</option>
+                                        <option>Q8</option>
+                                        <option>Cayenne</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Година от</label>
+                                    <select class="form-select"><option selected>Избери година</option><option>2022</option><option>2021</option></select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Година до</label>
+                                    <select class="form-select"><option selected>Избери година</option><option>2024</option><option>2023</option></select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Бюджет (EUR)</label>
+                                    <select class="form-select"><option selected>Напр. 30 000</option><option>€30,000 - €50,000</option><option>€50,000 - €80,000</option></select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Двигател</label>
+                                    <select class="form-select"><option selected>Избери двигател</option><option>Дизел</option><option>Бензин</option><option>Хибрид</option></select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Скоростна кутия</label>
+                                    <select class="form-select"><option selected>Избери</option><option>Автоматик</option><option>Ръчна</option></select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Тип</label>
+                                    <select class="form-select"><option selected>Избери тип</option><option>SUV</option><option>Седан</option><option>Комби</option></select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Задвижване</label>
+                                    <select class="form-select"><option selected>Избери</option><option>xDrive / 4x4</option><option>Задно</option></select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Локация на внос</label>
+                                    <select class="form-select"><option selected>Западна Европа / Канада</option><option>Германия</option><option>Канада</option></select>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label">Допълнителни изисквания</label>
+                                    <textarea class="form-control" rows="3" placeholder="Опишете желан цвят, оборудване, километраж, конкретен модел, какво е важно за вас..."></textarea>
+                                </div>
+
+                                <div class="col-12 mt-4 text-end">
+                                    <button type="button" class="btn btn-gold w-100 py-3 fs-6">Продължи <i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dark Process Grid -->
+    <section class="dark-process-section">
+        <div class="container">
+            <span class="text-uppercase text-secondary fw-bold fs-12">КАК РАБОТИМ</span>
+            <h2 class="fw-bold my-2 fs-2 text-white">От запитване до ключове</h2>
+            <p class="text-secondary mb-5">Ясен, сигурен и прозрачен процес.</p>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-box">
+                        <span class="process-step-num">01 <i class="fa-solid fa-file-lines ms-1"></i></span>
+                        <h5 class="fw-bold text-white mb-2">Запитване</h5>
+                        <p class="text-secondary small mb-0">Споделете с нас какъв автомобил търсите и какви са вашите изисквания.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-box">
+                        <span class="process-step-num">02 <i class="fa-solid fa-magnifying-glass ms-1"></i></span>
+                        <h5 class="fw-bold text-white mb-2">Намиране и оферта</h5>
+                        <p class="text-secondary small mb-0">Ние търсим най-добрите наличности от Западна Европа и Канада и ви изпращаме оферти.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-box">
+                        <span class="process-step-num">03 <i class="fa-solid fa-car ms-1"></i></span>
+                        <h5 class="fw-bold text-white mb-2">Проверка</h5>
+                        <p class="text-secondary small mb-0">Проверяваме историята, състоянието и всички документи.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-box">
+                        <span class="process-step-num">04 <i class="fa-solid fa-truck ms-1"></i></span>
+                        <h5 class="fw-bold text-white mb-2">Доставка и регистрация</h5>
+                        <p class="text-secondary small mb-0">Организираме транспорта, митническото оформяне и регистрацията в България.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-inline-block mb-3" href="index.html">
+                        <img src="images/Logo-white.png" alt="Westlane Motors" style="max-height:55px;">
+                    </a>
+                    <p class="mb-4" style="line-height:1.6;font-size: 15px; max-width: 368px;">
+                        Внос на висококачествени автомобили от Западна Европа и Канада. Прозрачен процес, реални автомобили и пълно съдействие до регистрация в България.
+                    </p>
+                    <div class="footer-social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h6>Бързи връзки</h6>
+                    <ul>
+                        <li><a href="index.html">Начало</a></li>
+                        <li><a href="in-stock.html">В наличност</a></li>
+                        <li><a href="#">Продадени</a></li>
+                        <li><a href="process.html">Нашият процес</a></li>
+                        <li><a href="about.html">За нас</a></li>
+                        <li><a href="contact.html">Контакти</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <h6>Контакти</h6>
+                    <ul class="small">
+                        <li class="mb-2"><i class="fa-solid fa-phone me-2 text-secondary"></i> +359 88 123 4567</li>
+                        <li class="mb-2"><i class="fa-solid fa-envelope me-2 text-secondary"></i> office@westlanemotors.bg</li>
+                        <li class="mb-2"><i class="fa-solid fa-location-dot me-2 text-secondary"></i> София, България</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3">
+                    <h6>Работно време</h6>
+                    <p class="small text-secondary mb-1">Понеделник - Петък</p>
+                    <p class="small text-white fw-semibold mb-3">09.00 - 18.00</p>
+                    <p class="small text-secondary mb-1">Събота</p>
+                    <p class="small text-white fw-semibold">По предварителна уговорка</p>
+                </div>
+            </div>
+
+            <div class="pt-4 border-top border-secondary border-opacity-25 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small">
+                <div>© 2024 Westlane Motors. Всички права запазени.</div>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-secondary text-decoration-none">Политика за поверителност</a>
+                    <span>|</span>
+                    <a href="#" class="text-secondary text-decoration-none">Общи условия</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти - Westlane Motors</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Shared Site Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Trust Stats Bar (contact page: white background, plain outline icons) */
+        .trust-bar-section {
+            background: #ffffff;
+            border-top: 1px solid var(--border-color);
+            padding: 30px 0;
+            color: var(--text-dark);
+        }
+        .trust-stat-box {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .trust-stat-icon {
+            font-size: 45px;
+            color: var(--text-dark);
+            flex-shrink: 0;
+            width: 50px;
+            text-align: center;
+        }
+        .trust-stat-title {
+            font-size: 23px;
+            font-weight: 800;
+            margin-bottom: 2px;
+            color: var(--text-dark);
+        }
+        .trust-stat-desc {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="images/Logo-white.png" alt="Westlane Motors">
+            </a>
+
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Начало</a></li>
+                    <li class="nav-item"><a class="nav-link" href="in-stock.html">В наличност</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Продадени</a></li>
+                    <li class="nav-item"><a class="nav-link" href="process.html">Нашият процес</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">За нас</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Контакти</a></li>
+                </ul>
+                <a href="inquiry.html" class="btn btn-gold d-none d-lg-inline-block">Направи запитване &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <span class="section-subtitle-gold">КОНТАКТИ</span>
+            <h1 class="hero-title">Свържете се<br>с Westlane Motors.</h1>
+            <p class="hero-desc">
+                Готови сме да отговорим на всички ваши въпроси и да ви съдействаме при избор, внос или индивидуална поръчка на автомобил от Западна Европа и Канада.
+            </p>
+
+            <!-- 4 Icon Value Feature Pills -->
+            <div class="row g-3 hero-pillars-row">
+                <div class="col-6 col-lg-3">
+                    <div class="hero-pillar-item">
+                        <div class="hero-pillar-icon"><i class="fa-solid fa-phone"></i></div>
+                        <p class="hero-pillar-text">Бърз отговор</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="hero-pillar-item pillar-divider ps-lg-4">
+                        <div class="hero-pillar-icon"><i class="fa-regular fa-comments"></i></div>
+                        <p class="hero-pillar-text">Консултация и експертно мнение</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="hero-pillar-item pillar-divider ps-lg-4">
+                        <div class="hero-pillar-icon"><i class="fa-solid fa-file-circle-check"></i></div>
+                        <p class="hero-pillar-text">Пълно съдействие до регистрация</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="hero-pillar-item pillar-divider ps-lg-4">
+                        <div class="hero-pillar-icon"><i class="fa-solid fa-globe"></i></div>
+                        <p class="hero-pillar-text">На български и английски</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Section (2 Columns) -->
+    <section class="contact-main-section" id="contactForm">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Left Column: Form -->
+                <div class="col-lg-7">
+                    <div class="section-subtitle-gold">ИЗПРАТЕТЕ НИ СЪОБЩЕНИЕ</div>
+                    <h2 class="fw-bold mb-3" style="font-size: 2.2rem;">Направи запитване.</h2>
+                    <p class="text-secondary mb-4" style="line-height: 1.6;">
+                        Попълнете формата и ще се свържем с вас възможно най-скоро с индивидуално предложение според вашите изисквания.
+                    </p>
+
+                    <div class="form-card">
+                        <form onsubmit="event.preventDefault(); alert('Запитването е изпратено успешно!');">
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Име *</label>
+                                    <input type="text" class="form-control" placeholder="Иван Иванов" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Телефон *</label>
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" style="background:#f9fafb; border-color:#e5e7eb;">+359</button>
+                                        <input type="tel" class="form-control" placeholder="88 123 4567" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Имейл *</label>
+                                <input type="email" class="form-control" placeholder="you@example.com" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Какъв автомобил търсите? *</label>
+                                <input type="text" class="form-control" placeholder="Марка, модел или опишете вашите изисквания" required>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Бюджет (EUR)</label>
+                                    <select class="form-select">
+                                        <option selected>Изберете</option>
+                                        <option>€ 30 000 - € 50 000</option>
+                                        <option>€ 50 000 - € 80 000</option>
+                                        <option>€ 80 000+</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Локация на внос</label>
+                                    <select class="form-select">
+                                        <option selected>Западна Европа / Канада</option>
+                                        <option>Германия</option>
+                                        <option>Швейцария</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label small fw-bold">Допълнителна информация</label>
+                                <textarea class="form-control" rows="4" placeholder="Цвят, оборудване, двигател, срокове и други детайли..."></textarea>
+                            </div>
+
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="privacy" checked required>
+                                <label class="form-check-label small text-muted" for="privacy">
+                                    Съгласявам се с <a href="#" class="text-dark text-decoration-underline">Политика за поверителност</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-gold w-100 py-3">Изпрати запитване &rarr;</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Column: Direct Contact Details -->
+                <div class="col-lg-5">
+                    <div class="section-subtitle-gold">ДИРЕКТНА ВРЪЗКА</div>
+                    <h2 class="fw-bold mb-4" style="font-size: 2.2rem;">Нашите контакти.</h2>
+
+                    <!-- Phone Card -->
+                    <div class="info-card">
+                        <div class="info-card-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <div class="info-card-title">Телефон</div>
+                            <div class="info-card-value">+359 88 123 4567</div>
+                            <p class="info-card-sub">Понеделник - Петък, 09:00 - 18:00</p>
+                        </div>
+                    </div>
+
+                    <!-- Email Card -->
+                    <div class="info-card">
+                        <div class="info-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <div class="info-card-title">Имейл</div>
+                            <div class="info-card-value">office@westlanemotors.bg</div>
+                            <p class="info-card-sub">Отговор в рамките на 24 часа</p>
+                        </div>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div class="info-card">
+                        <div class="info-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <div class="info-card-title">Адрес</div>
+                            <div class="info-card-value">София, България</div>
+                            <p class="info-card-sub">Точен адрес при уговорка за среща</p>
+                            <a href="#mapSection" class="info-card-link">Виж на карта &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp/Viber Card -->
+                    <div class="info-card">
+                        <div class="info-card-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div>
+                            <div class="info-card-title">WhatsApp / Viber</div>
+                            <div class="info-card-value">+359 88 123 4567</div>
+                            <p class="info-card-sub">Бърза връзка и изпращане на оферти</p>
+                            <a href="https://wa.me/359881234567" target="_blank" class="info-card-link">Отвори чат &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Follow Us Section -->
+                    <div class="social-box">
+                        <h6 class="fw-bold mb-3">Последвайте ни</h6>
+                        <div class="social-box-icons">
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location / Map Section -->
+    <section class="map-section" id="mapSection">
+        <iframe class="map-bg-iframe" src="https://maps.google.com/maps?q=Sofia,Bulgaria&z=12&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Westlane Motors location map"></iframe>
+
+        <div class="map-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <span class="section-subtitle-gold">НАШЕТО МЕСТОПОЛОЖЕНИЕ</span>
+                        <h2 class="fw-bold text-white mb-2" style="font-size: 2.2rem;">София, България</h2>
+                        <p class="text-secondary mb-4" style="max-width:500px;">
+                            Работим основно онлайн, но при предварителна уговорка можете да ни посетите в офиса ни в София. Тук ще получите лично съдействие, консултация и пълна информация за процеса.
+                        </p>
+                        <a href="https://maps.google.com/?q=Sofia,Bulgaria" target="_blank" class="btn btn-gold">Виж на карта &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-pin-badge">
+            <i class="fa-solid fa-location-dot text-warning fs-4"></i>
+            <div>
+                <div class="fw-bold small">Westlane Motors</div>
+                <div class="text-secondary" style="font-size:0.75rem;">София, България</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-5">
+                    <span class="section-subtitle-gold">ЧЕСТО ЗАДАВАНИ ВЪПРОСИ</span>
+                    <h2 class="fw-bold mb-3" style="font-size: 2.2rem;">Имате въпроси?</h2>
+                    <p class="text-secondary mb-4" style="line-height: 1.6;max-width:400px;">
+                        Събрахме най-често задаваните въпроси от наши клиенти, за да ви помогнем да разберете по-добре нашия процес.
+                    </p>
+                    <a href="#" class="btn btn-gold">Виж всички въпроси &rarr;</a>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="accordion faq-flat-accordion" id="faqAccordion">
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Колко време отнема вносът на автомобил?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Обикновено процесът по внос, проверка и доставка от Западна Европа отнема между 7 и 14 работни дни. За автомобили от Канада срокът е между 30 и 45 дни в зависимост от транспортните линии.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Мога ли да поръчам конкретен модел?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Да, предлагаме напълно персонализирано търсене според вашите конкретни изисквания за марка, модел, година, екстри, цвят и бюджет.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Каква е крайната цена?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Преди да стартираме процеса, ви предоставяме пълна калкулация без скрити такси. Крайната цена включва покупката, транспорта, застраховката, митническите такси (ако има такива) и нашия хонорар.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Проверявате ли историята на автомобила?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Всеки автомобил преминава през задължителна техническа и сервизна проверка, включително преглед на история за щети, реални километри и техническо състояние от оторизирани сервизи.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Мога ли да финансирам покупката?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Да, работим с водещи лизингови компании и банки в България, за да ви предложим гъвкави лизингови условия за избрания автомобил.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    С какви гаранции работите?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Работим с официални представителства и доказани партньори. Всеки автомобил пристига с прозрачна документация и гаранция за реален пробег и произход.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Stats Bar -->
+    <section class="trust-bar-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-6 col-lg-3">
+                    <div class="trust-stat-box">
+                        <div class="trust-stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <div class="trust-stat-title">Над 500</div>
+                            <p class="trust-stat-desc">Внесени автомобила</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <div class="trust-stat-box">
+                        <div class="trust-stat-icon"><i class="fa-solid fa-users"></i></div>
+                        <div>
+                            <div class="trust-stat-title">100%</div>
+                            <p class="trust-stat-desc">Доволни клиенти</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <div class="trust-stat-box">
+                        <div class="trust-stat-icon"><i class="fa-solid fa-star"></i></div>
+                        <div>
+                            <div class="trust-stat-title">5+ Години</div>
+                            <p class="trust-stat-desc">Опит в бранша</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <div class="trust-stat-box">
+                        <div class="trust-stat-icon"><i class="fa-solid fa-globe"></i></div>
+                        <div>
+                            <div class="trust-stat-title">Европа & Канада</div>
+                            <p class="trust-stat-desc">Проверени партньори</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-inline-block mb-3" href="index.html">
+                        <img src="images/Logo-white.png" alt="Westlane Motors" style="max-height:55px;">
+                    </a>
+                    <p class="mb-4" style="line-height:1.6;font-size: 15px; max-width: 368px;">
+                        Внос на висококачествени автомобили от Западна Европа и Канада. Прозрачен процес, реални автомобили и пълно съдействие до регистрация в България.
+                    </p>
+                    <div class="footer-social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h6>Бързи връзки</h6>
+                    <ul>
+                        <li><a href="index.html">Начало</a></li>
+                        <li><a href="in-stock.html">В наличност</a></li>
+                        <li><a href="#">Продадени</a></li>
+                        <li><a href="process.html">Нашият процес</a></li>
+                        <li><a href="about.html">За нас</a></li>
+                        <li><a href="contact.html">Контакти</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <h6>Контакти</h6>
+                    <ul class="small">
+                        <li class="mb-2"><i class="fa-solid fa-phone me-2 text-secondary"></i> +359 88 123 4567</li>
+                        <li class="mb-2"><i class="fa-solid fa-envelope me-2 text-secondary"></i> office@westlanemotors.bg</li>
+                        <li class="mb-2"><i class="fa-solid fa-location-dot me-2 text-secondary"></i> София, България</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3">
+                    <h6>Работно време</h6>
+                    <p class="small text-secondary mb-1">Понеделник - Петък</p>
+                    <p class="small text-white fw-semibold mb-3">09.00 - 18.00</p>
+                    <p class="small text-secondary mb-1">Събота</p>
+                    <p class="small text-white fw-semibold">По предварителна уговорка</p>
+                </div>
+            </div>
+
+            <div class="pt-4 border-top border-secondary border-opacity-25 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small">
+                <div>© 2024 Westlane Motors. Всички права запазени.</div>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-secondary text-decoration-none">Политика за поверителност</a>
+                    <span>|</span>
+                    <a href="#" class="text-secondary text-decoration-none">Общи условия</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
