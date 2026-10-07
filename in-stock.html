@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>В наличност - Westlane Motors</title>
+    <title>BMW X5 30d M Sport - WestlaneA Motors</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome 6 for Icons -->
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Google Fonts (Inter) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,288 +20,398 @@
             --dark-card: #131927;
             --accent-gold: #dfb175;
             --accent-gold-hover: #cb9b5e;
-            --accent-gold-soft: rgba(223, 177, 117, 0.15);
             --light-bg: #f8f9fa;
             --text-dark: #111827;
             --text-muted: #6b7280;
             --border-color: #e5e7eb;
-            --dark-border: rgba(255, 255, 255, 0.1);
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
             color: var(--text-dark);
             overflow-x: hidden;
         }
 
-        /* Gold Buttons */
+        /* Buttons */
         .btn-gold {
             background-color: var(--accent-gold);
             color: #000000;
             font-weight: 600;
             border: none;
             border-radius: 6px;
-            padding: 10px 22px;
+            padding: 10px 20px;
             transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
         }
         .btn-gold:hover {
             background-color: var(--accent-gold-hover);
             color: #000000;
-            transform: translateY(-1px);
         }
 
-        /* Hero Banner */
         .hero-section {
             position: relative;
-            background: linear-gradient(180deg, rgba(11, 15, 25, 0.78) 0%, rgba(11, 15, 25, 0.96) 100%),
-                        url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background:
+                linear-gradient(100deg, rgba(11, 15, 25, 0.88) 0%, rgba(11, 15, 25, 0.6) 32%, rgba(11, 15, 25, 0.18) 58%, rgba(11, 15, 25, 0.08) 100%),
+                linear-gradient(180deg, rgba(11, 15, 25, 0.2) 0%, rgba(11, 15, 25, 0.02) 30%, rgba(11, 15, 25, 0.25) 65%, rgba(11, 15, 25, 0.95) 100%),
+                url('images/about-hero-image.jpg') center/cover no-repeat;
             color: #ffffff;
-            padding: 150px 0 60px 0;
+            padding: 150px 0 50px 0;
         }
-        .section-subtitle-gold {
-            color: var(--accent-gold);
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
+        .back-link {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .back-link:hover {
+            color: #ffffff;
+        }
+        .badge-sold {
+            background-color: rgba(223, 177, 117, 0.18);
+            color: #f1d9b5;
+            border: 1px solid rgba(223, 177, 117, 0.35);
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
             display: inline-block;
+            margin-bottom: 15px;
         }
         .hero-title {
-            font-size: 2.8rem;
+            font-size: 2.75rem;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 30px;
             letter-spacing: -0.5px;
-            line-height: 1.15;
-        }
-        .hero-title span {
-            color: var(--accent-gold);
-        }
-        .hero-desc {
-            color: #d1d5db;
-            font-size: 1.05rem;
-            max-width: 760px;
-            line-height: 1.6;
-            margin-bottom: 35px;
         }
 
-        /* Quick Badges */
-        .hero-stat-badge {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 8px;
-            padding: 12px 18px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #ffffff;
-            font-size: 0.9rem;
-            font-weight: 600;
+        /* Stats Strip (plain icon, no card/box) */
+        .stats-row {
+            max-width: 620px;
         }
-        .hero-stat-icon {
-            color: var(--accent-gold);
+        .stat-box {
+            text-align: center;
+            border-left: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .stats-row > div:first-child .stat-box {
+            border-left: none;
+        }
+        .stat-box i {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .stat-value {
+            font-weight: 700;
             font-size: 1.2rem;
-        }
-
-        /* Filter Section Bar */
-        .filter-section {
-            margin-top: -30px;
-            position: relative;
-            z-index: 10;
-        }
-        .filter-card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 1px solid var(--border-color);
-        }
-        .filter-select {
-            border: 1px solid #d1d5db;
-            border-radius: 6px;
-            padding: 10px 14px;
-            font-size: 0.88rem;
-            color: #374151;
-            width: 100%;
-            background-color: #fff;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .filter-select:focus {
-            border-color: var(--accent-gold);
-        }
-        .btn-filter-search {
-            background-color: var(--dark-bg);
             color: #ffffff;
-            font-weight: 600;
-            border: none;
-            border-radius: 6px;
-            padding: 10px 20px;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: all 0.2s ease;
         }
-        .btn-filter-search:hover {
-            background-color: #1a233a;
-            color: var(--accent-gold);
+        .stat-label {
+            font-size: 0.8rem;
+            color: #9ca3af;
         }
 
-        /* Car Cards Grid */
-        .car-card {
-            background: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+        .gallery-section {
+            background-color: #ffffff;
+            padding: 40px 0;
         }
-        .car-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-        }
-        .car-img-container {
+        .main-gallery-img {
             position: relative;
-            width: 100%;
-            height: 200px;
+            border-radius: 10px;
             overflow: hidden;
-            background-color: #0b0f19;
+            min-height: 405px;
+            max-height: 408px;
         }
-        .car-img-container img {
+        .main-gallery-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
-        .car-card:hover .car-img-container img {
+        .counter-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.65);
+            color: #ffffff;
+            backdrop-filter: blur(4px);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .gallery-nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            color: #ffffff;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            z-index: 2;
+        }
+        .gallery-nav-arrow:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .gallery-nav-arrow.prev { left: 15px; }
+        .gallery-nav-arrow.next { right: 15px; }
+        .thumb-item.active-thumb {
+            outline: 2px solid var(--accent-gold);
+            outline-offset: -2px;
+        }
+        .thumb-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .thumb-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+        .thumb-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .thumb-item:hover img {
             transform: scale(1.05);
         }
-        .car-status-badge {
+        .more-overlay {
             position: absolute;
-            top: 12px;
-            left: 12px;
-            background: rgba(16, 185, 129, 0.9);
-            color: #ffffff;
-            font-size: 0.72rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-        }
-        .car-status-badge.order {
-            background: rgba(59, 130, 246, 0.9);
-        }
-        .car-body {
-            padding: 20px;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(11, 15, 25, 0.75);
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
-        }
-        .car-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 12px;
-        }
-        .car-specs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            margin-bottom: 18px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #f3f4f6;
-        }
-        .car-spec-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .car-spec-item i {
-            color: #9ca3af;
-        }
-        .car-footer {
-            margin-top: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .car-price {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--dark-bg);
-        }
-        .btn-car-action {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: #f3f4f6;
-            color: var(--dark-bg);
-            display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-        .car-card:hover .btn-car-action {
-            background: var(--accent-gold);
-            color: #000;
-        }
-
-        /* Pagination Styling */
-        .pagination-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            margin-top: 50px;
-        }
-        .page-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            background: #ffffff;
-            color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-        .page-btn:hover {
-            border-color: var(--accent-gold);
-            color: var(--accent-gold);
-        }
-        .page-btn.active {
-            background: var(--dark-bg);
             color: #ffffff;
-            border-color: var(--dark-bg);
+            font-weight: 700;
+            font-size: 1.1rem;
         }
 
-        /* Footer spacing override for this page's card grid */
-        footer {
-            margin-top: 90px;
+        .details-section {
+            padding: 40px 0;
+        }
+        .section-subtitle {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 3px 0;
+        }
+        .spec-icon {
+            width: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+        .flag-icon-de {
+            width: 22px;
+            height: 16px;
+            display: inline-block;
+            background: linear-gradient(180deg, #000000 0 33%, #dd0000 33% 66%, #ffce00 66% 100%);
+            border-radius: 2px;
+        }
+        .spec-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+        .spec-value {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        /* Feature Pillars (vertical: icon on top, text below) */
+        .feature-pillar {
+            margin-top: 0;
+        }
+        .feature-pillar-icon {
+            font-size: 40px;
+            color: var(--text-dark);
+            margin-bottom: 14px;
+        }
+
+        /* Feature Pillars used inline (icon beside text) e.g. inquiry form section */
+        .feature-pillar-inline {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .feature-pillar-inline .feature-pillar-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-color: var(--accent-gold);
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-bottom: 0;
+            color: inherit;
+        }
+
+        .equipment-section {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            padding: 0;
+            overflow: hidden;
+        }
+        .equipment-img-col {
+            min-height: 100%;
+        }
+        .equipment-img-col img {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+        .equipment-text-col {
+            padding: 60px 50px;
+        }
+        .check-list-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+            color: #e5e7eb;
+        }
+        .check-badge {
+            width: 20px;
+            height: 20px;
+            background: rgba(223, 177, 117, 0.2);
+            color: var(--accent-gold);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        .form-section {
+            background-color: #f9fafb;
+            padding: 80px 0;
+        }
+        .form-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-color);
+        }
+        .form-control, .form-select {
+            border-radius: 6px;
+            padding: 12px 15px;
+            font-size: 0.9rem;
+            border: 1px solid #e5e7eb;
+            background-color: #f9fafb;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 0.2rem rgba(223, 177, 117, 0.25);
+            background-color: #ffffff;
+        }
+
+        .similar-section {
+            padding: 80px 0 60px 0;
+        }
+        .car-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+        }
+        .car-card-img {
+            position: relative;
+            height: 180px;
+        }
+        .car-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .car-card-body {
+            padding: 18px;
+        }
+
+        /* Mobile / tablet responsive fixes */
+        @media (max-width: 767.98px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .stats-row {
+                max-width: 100%;
+            }
+            .stats-row > div {
+                flex: 0 0 50%;
+                max-width: 50%;
+                margin-bottom: 18px;
+            }
+            .stat-box {
+                border-left: none;
+                text-align: left;
+            }
+            .main-gallery-img {
+                min-height: 260px;
+                max-height: 320px;
+            }
+            .thumb-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+            .equipment-text-col {
+                padding: 40px 24px;
+            }
+            .equipment-img-col img {
+                min-height: 220px;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .thumb-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Header -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
@@ -316,7 +426,7 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Начало</a></li>
                     <li class="nav-item"><a class="nav-link active" href="in-stock.html">В наличност</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Продадени</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sold-cars.html">Продадени</a></li>
                     <li class="nav-item"><a class="nav-link" href="process.html">Нашият процес</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">За нас</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Контакти</a></li>
@@ -326,404 +436,540 @@
         </div>
     </nav>
 
-    <!-- Hero Banner Section -->
     <section class="hero-section">
         <div class="container">
-            <span class="section-subtitle-gold">АВТОМОБИЛИ В НАЛИЧНОСТ И ПО ПОРЪЧКА</span>
-            <h1 class="hero-title">Открийте вашия <span>следващ премиум</span> автомобил.</h1>
-            <p class="hero-desc">
-                Разгледайте избрани автомобили в наличност или заявете индивидуален внос от Западна Европа и Канада.
-            </p>
+            <a href="sold-cars.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Към Продадени автомобили</a>
+            <br>
+            <span class="badge-sold">Продаден</span>
+            <h1 class="hero-title">BMW X5 30d M Sport</h1>
 
-            <!-- Quick Badges -->
+            <!-- Stats Bar -->
+            <div class="row g-0 stats-row">
+                <div class="col">
+                    <div class="stat-box">
+                        <i class="fa-regular fa-calendar"></i>
+                        <div class="stat-value">2022</div>
+                        <div class="stat-label">Година</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-value">32 850 км</div>
+                        <div class="stat-label">Пробег</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gas-pump"></i>
+                        <div class="stat-value">3.0 Дизел</div>
+                        <div class="stat-label">Двигател</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-sliders"></i>
+                        <div class="stat-value">Автоматик</div>
+                        <div class="stat-label">Скоростна кутия</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-value">286 к.с.</div>
+                        <div class="stat-label">Мощност</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
             <div class="row g-3">
-                <div class="col-12 col-md-4">
-                    <div class="hero-stat-badge">
-                        <i class="fa-solid fa-circle-check hero-stat-icon"></i>
-                        <span>100% Проверени автомобили</span>
+                <div class="col-lg-7">
+                    <div class="main-gallery-img">
+                        <img src="images/fleet-5.jpg" alt="BMW X5 Main Front" id="mainGalleryImg">
+                        <button type="button" class="gallery-nav-arrow prev" onclick="slideGallery(-1)" aria-label="Предишна снимка"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button type="button" class="gallery-nav-arrow next" onclick="slideGallery(1)" aria-label="Следваща снимка"><i class="fa-solid fa-chevron-right"></i></button>
+                        <span class="counter-badge" id="galleryCounter">1/16</span>
                     </div>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="hero-stat-badge">
-                        <i class="fa-solid fa-file-shield hero-stat-icon"></i>
-                        <span>Пълна сервизна история</span>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="hero-stat-badge">
-                        <i class="fa-solid fa-truck-fast hero-stat-icon"></i>
-                        <span>Бърза доставка до ключ</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Search & Filter Bar Section -->
-    <section class="filter-section">
-        <div class="container">
-            <div class="filter-card">
-                <form id="filterForm">
-                    <div class="row g-3">
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <select class="filter-select" id="brandSelect">
-                                <option value="">Марка (Всички)</option>
-                                <option value="BMW">BMW</option>
-                                <option value="Mercedes-Benz">Mercedes-Benz</option>
-                                <option value="Audi">Audi</option>
-                                <option value="Porsche">Porsche</option>
-                                <option value="Volvo">Volvo</option>
-                                <option value="Land Rover">Land Rover</option>
-                                <option value="Tesla">Tesla</option>
-                            </select>
+                <div class="col-lg-5">
+                    <div class="thumb-grid" id="thumbGrid">
+                        <div class="thumb-item active-thumb" onclick="setGallerySlide(0)">
+                            <img src="images/fleet-5.jpg" alt="BMW X5 Main view">
                         </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <select class="filter-select" id="modelSelect">
-                                <option value="">Модел (Всички)</option>
-                                <option value="X5">X5</option>
-                                <option value="E-Class">E 300</option>
-                                <option value="Q8">Q8</option>
-                                <option value="Cayenne">Cayenne</option>
-                                <option value="XC60">XC60</option>
-                                <option value="Range Rover">Range Rover</option>
-                            </select>
+                        <div class="thumb-item" onclick="setGallerySlide(1)">
+                            <img src="images/fleet-6.png" alt="BMW X5 Rear view">
                         </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <select class="filter-select" id="yearFrom">
-                                <option value="">Година от</option>
-                                <option value="2018">2018</option>
-                                <option value="2020">2020</option>
-                                <option value="2022">2022</option>
-                                <option value="2024">2024</option>
-                            </select>
+                        <div class="thumb-item" onclick="setGallerySlide(2)">
+                            <img src="images/fleet-7.png" alt="BMW X5 Front city view">
                         </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <select class="filter-select" id="yearTo">
-                                <option value="">Година до</option>
-                                <option value="2024">2024</option>
-                                <option value="2023">2023</option>
-                                <option value="2022">2022</option>
-                            </select>
+                        <div class="thumb-item" onclick="setGallerySlide(3)">
+                            <img src="images/fleet-9.png" alt="BMW X5 Mountain front">
                         </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <select class="filter-select" id="engineSelect">
-                                <option value="">Двигател</option>
-                                <option value="Дизел">Дизел</option>
-                                <option value="Бензин">Бензин</option>
-                                <option value="Хибрид">Хибрид</option>
-                                <option value="Електричен">Електричен</option>
-                            </select>
+                        <div class="thumb-item" onclick="setGallerySlide(4)">
+                            <img src="images/fleet-1-bmw.png" alt="BMW X5 Side view">
                         </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <button type="button" class="btn-filter-search" onclick="applyFilters()">
-                                <i class="fa-solid fa-magnifying-glass"></i> Търси
-                            </button>
+                        <div class="thumb-item" onclick="setGallerySlide(5)">
+                            <img src="images/about-hero-image.jpg" alt="BMW X5 Road view">
                         </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Car Inventory Grid Section -->
-    <section class="mt-5">
-        <div class="container">
-            <div class="row g-4" id="carsGrid">
-                
-                <!-- Car 1 -->
-                <div class="col-md-6 col-lg-4 car-item" data-brand="BMW" data-engine="Дизел">
-                    <div class="car-card">
-                        <div class="car-img-container">
-                            <span class="car-status-badge">В наличност</span>
-                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" alt="BMW X5 30d">
+                        <div class="thumb-item" onclick="setGallerySlide(6)">
+                            <img src="images/fleet-6.png" alt="BMW X5 Rear detail">
                         </div>
-                        <div class="car-body">
-                            <h3 class="car-title">BMW X5 30d xDrive</h3>
-                            <div class="car-specs">
-                                <div class="car-spec-item"><i class="fa-regular fa-calendar"></i> 2022</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gas-pump"></i> 3.0 Дизел</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-bolt"></i> 286 к.с.</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gauge-high"></i> 42 000 км</div>
+                        <div class="thumb-item" onclick="setGallerySlide(7)">
+                            <img src="images/fleet-9.png" alt="BMW X5 Mountain road">
+                        </div>
+                        <div class="thumb-item" onclick="setGallerySlide(8)">
+                            <img src="images/fleet-7.png" alt="BMW X5 City view">
+                            <div class="more-overlay">
+                                +12
+                                <small style="font-size:0.7rem; font-weight:400;">Още снимки</small>
                             </div>
-                            <div class="car-footer">
-                                <div class="car-price">€ 78,900</div>
-                                <a href="#" class="btn-car-action" title="Преглед"><i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="details-section">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Left Description -->
+                <div class="col-lg-6">
+                    <div class="section-subtitle">ЗА АВТОМОБИЛА</div>
+                    <h2 class="fw-bold mb-4 fs-1" >Премиум SUV с доказан произход.</h2>
+                    <p class="text-secondary mb-4 fs-5" style="line-height: 1.7;">
+                        BMW X5 30d M Sport, внесен по индивидуална поръчка от Германия. Автомобилът е с пълна сервизна история, в отлично техническо и визуално състояние. Съчетава комфорт, динамика и модерни технологии – идеален избор за семеен и бизнес автомобил.
+                    </p>
+
+                    <div class="row g-4">
+                        <div class="col-6 col-sm-4">
+                            <div class="feature-pillar">
+                                <div class="feature-pillar-icon"><i class="fa-solid fa-gem"></i></div>
+                                <h6 class="fw-bold mb-1">Проверен произход</h6>
+                                <p class="text-muted small mb-0">Пълна история и реален пробег</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4">
+                            <div class="feature-pillar">
+                                <div class="feature-pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                <h6 class="fw-bold mb-1">Отлично състояние</h6>
+                                <p class="text-muted small mb-0">Технически и визуално без забележки</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4">
+                            <div class="feature-pillar">
+                                <div class="feature-pillar-icon"><i class="fa-solid fa-headset"></i></div>
+                                <h6 class="fw-bold mb-1">Професионално съдействие</h6>
+                                <p class="text-muted small mb-0">От избор до регистрация</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Pricing & Specifications Table -->
+                <div class="col-lg-6">
+                    <div class="p-4 rounded-3" style="background-color: #fafafa; border: 1px solid var(--border-color);">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="section-subtitle mb-0">ЦЕНА</span>
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 rounded-pill small">
+                                <i class="fa-solid fa-check me-1"></i> Продаден
+                            </span>
+                        </div>
+                        <div class="display-5 fw-bold mb-2">€ 78 900</div>
+                        <p class="text-muted small mb-4">Този автомобил вече е продаден. Можем да намерим подобен за вас.</p>
+
+                        <a href="#requestForm" class="btn btn-gold w-100 py-3 mb-4">Направи запитване за подобен автомобил &rarr;</a>
+
+                        <!-- Specs Grid -->
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="spec-item">
+                                    <div class="spec-icon"><i class="fa-solid fa-car-side"></i></div>
+                                    <div>
+                                        <p class="spec-label">Марка</p>
+                                        <p class="spec-value">BMW</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="spec-item">
+                                    <div class="spec-icon"><i class="fa-solid fa-bolt"></i></div>
+                                    <div>
+                                        <p class="spec-label">Мощност</p>
+                                        <p class="spec-value">286 к.с.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="spec-item">
+                                    <div class="spec-icon"><i class="fa-solid fa-car"></i></div>
+                                    <div>
+                                        <p class="spec-label">Модел</p>
+                                        <p class="spec-value">X5 30d</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="spec-item">
+                                    <div class="spec-icon"><i class="fa-solid fa-gears"></i></div>
+                                    <div>
+                                        <p class="spec-label">Скоростна кутия</p>
+                                        <p class="spec-value">Автоматик</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="spec-item">
+                                    <div class="spec-icon"><i class="fa-regular fa-calendar"></i></div>
+                                    <div>
+                                        <p class="spec-label">Година</p>
+                                        <p class="spec-value">2022</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="spec-item">
+                                    <div class="spec-icon"><i class="fa-solid fa-dharmachakra"></i></div>
+                                    <div>
+                                        <p class="spec-label">Задвижване</p>
+                                        <p class="spec-value">xDrive (4x4)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="spec-item">
+                                    <div class="spec-icon"><i class="fa-solid fa-gauge"></i></div>
+                                    <div>
+                                        <p class="spec-label">Пробег</p>
+                                        <p class="spec-value">32 850 км</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="spec-item">
+                                    <div class="spec-icon"><i class="fa-solid fa-couch"></i></div>
+                                    <div>
+                                        <p class="spec-label">Ниво на оборудване</p>
+                                        <p class="spec-value">M Sport</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="spec-item">
+                                    <div class="spec-icon"><i class="fa-solid fa-gas-pump"></i></div>
+                                    <div>
+                                        <p class="spec-label">Двигател</p>
+                                        <p class="spec-value">3.0 Дизел</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="spec-item">
+                                    <div class="spec-icon"><span class="flag-icon-de"></span></div>
+                                    <div>
+                                        <p class="spec-label">Произход</p>
+                                        <p class="spec-value">Германия</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="equipment-section">
+        <div class="row g-0 align-items-stretch">
+            <div class="col-lg-5 equipment-img-col">
+                <img src="images/about-2-img.jpg" alt="BMW X5 Interior">
+            </div>
+            <div class="col-lg-7 equipment-text-col">
+                <div class="section-subtitle">ОБОРУДВАНЕ</div>
+                <h2 class="fw-bold text-white mb-5">Основни екстри</h2>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> M Sport пакет – екстериор и интериор</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Адаптивни LED фарове</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Панорамен покрив</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> BMW Live Cockpit Professional</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Harman Kardon озвучителна система</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Кожен салон с електрически седалки</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Адаптивно окачване</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Асистенти за безопасност</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Камери 360°</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Подгрев на предни и задни седалки</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Head-Up дисплей</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Безключов достъп и старт</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Електрическо багажно отделение</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Пакет асистиране при шофиране</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Активен круиз контрол</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Lane Assist / Blind Spot</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Ambient осветление</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Голям навигационен дисплей</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> Apple CarPlay / Android Auto</div>
+                        <div class="check-list-item"><span class="check-badge"><i class="fa-solid fa-check"></i></span> и още...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section" id="requestForm">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <!-- Left Info -->
+                <div class="col-lg-5">
+                    <div class="section-subtitle">НАМЕРЕТЕ ПОДОБЕН АВТОМОБИЛ</div>
+                    <h2 class="fw-bold mb-4" style="font-size: 2.2rem;">Интересува ви подобен автомобил?</h2>
+                    <p class="text-secondary mb-4">
+                        Попълнете формата и ще се свържем с вас възможно най-скоро с индивидуално предложение според вашите изисквания.
+                    </p>
+
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="feature-pillar-inline mt-2">
+                                <div class="feature-pillar-icon"><i class="fa-solid fa-sliders"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Персонализиран подбор</h6>
+                                    <p class="text-muted small mb-0">Намираме точния автомобил според вашите критерии.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="feature-pillar-inline mt-2">
+                                <div class="feature-pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Достъп до премиум пазари</h6>
+                                    <p class="text-muted small mb-0">Работим с доказани партньори в Западна Европа и Канада.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="feature-pillar-inline mt-2">
+                                <div class="feature-pillar-icon"><i class="fa-solid fa-headset"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Пълно съдействие</h6>
+                                    <p class="text-muted small mb-0">От избор и покупка до доставка и регистрация.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="feature-pillar-inline mt-2">
+                                <div class="feature-pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Без скрити разходи</h6>
+                                    <p class="text-muted small mb-0">Ясен процес и пълна прозрачност.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form Box -->
+                <div class="col-lg-7">
+                    <div class="form-card">
+                        <form onsubmit="event.preventDefault();">
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Име *</label>
+                                    <input type="text" class="form-control" placeholder="Иван Иванов" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Телефон *</label>
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" style="background:#f9fafb; border-color:#e5e7eb;">+359</button>
+                                        <input type="tel" class="form-control" placeholder="88 123 4567" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Имейл *</label>
+                                <input type="email" class="form-control" placeholder="you@example.com" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Какъв автомобил търсите? *</label>
+                                <input type="text" class="form-control" placeholder="Марка, модел или опишете вашите изисквания">
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Бюджет (EUR)</label>
+                                    <select class="form-select">
+                                        <option selected>Изберете</option>
+                                        <option>€ 30 000 - € 50 000</option>
+                                        <option>€ 50 000 - € 80 000</option>
+                                        <option>€ 80 000+</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Локация на внос</label>
+                                    <select class="form-select">
+                                        <option selected>Западна Европа / Канада</option>
+                                        <option>Германия</option>
+                                        <option>Швейцария</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Допълнителна информация</label>
+                                <textarea class="form-control" rows="3" placeholder="Цвят, оборудване, двигател, срокове и други детайли..."></textarea>
+                            </div>
+
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="privacy" checked required>
+                                <label class="form-check-label small text-muted" for="privacy">
+                                    Съгласявам се с <a href="#" class="text-dark text-decoration-underline">Политика за поверителност</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-gold w-100 py-3">Изпрати запитване &rarr;</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="similar-section">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+                <div>
+                    <div class="section-subtitle">ОЩЕ ПРОДАДЕНИ АВТОМОБИЛИ</div>
+                    <h3 class="fw-bold m-0">Подобни продадени автомобили</h3>
+                </div>
+                <a href="#" class="text-decoration-none fw-semibold small" style="color: var(--accent-gold);">Виж всички продадени &rarr;</a>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <!-- Car 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="car-card">
+                        <div class="car-card-img">
+                            <img src="images/fleet-2-Mercedes.png" alt="Mercedes GLE">
+                            <span class="badge-sold position-absolute bottom-0 start-0 m-2" style="font-size:0.75rem;"><i class="fa-regular fa-circle-check me-1"></i>Продаден</span>
+                        </div>
+                        <div class="car-card-body">
+                            <h6 class="fw-bold mb-1">Mercedes-Benz GLE 350d</h6>
+                            <p class="text-muted small mb-3"><i class="fa-regular fa-calendar me-1"></i> 2021 &nbsp; <i class="fa-solid fa-gauge-high me-1"></i> 41 200 км</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">€ 72 900</span>
+                                <a href="#" class="btn btn-gold btn-sm"><i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Car 2 -->
-                <div class="col-md-6 col-lg-4 car-item" data-brand="Mercedes-Benz" data-engine="Хибрид">
+                <div class="col-md-6 col-lg-3">
                     <div class="car-card">
-                        <div class="car-img-container">
-                            <span class="car-status-badge">В наличност</span>
-                            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80" alt="Mercedes E 300 de">
+                        <div class="car-card-img">
+                            <img src="images/fleet-3-Audi.png" alt="Audi Q8">
+                            <span class="badge-sold position-absolute bottom-0 start-0 m-2" style="font-size:0.75rem;"><i class="fa-regular fa-circle-check me-1"></i>Продаден</span>
                         </div>
-                        <div class="car-body">
-                            <h3 class="car-title">Mercedes-Benz E 300 de</h3>
-                            <div class="car-specs">
-                                <div class="car-spec-item"><i class="fa-regular fa-calendar"></i> 2021</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gas-pump"></i> 2.0 Хибрид</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-bolt"></i> 320 к.с.</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gauge-high"></i> 58 000 км</div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price">€ 54,500</div>
-                                <a href="#" class="btn-car-action" title="Преглед"><i class="fa-solid fa-arrow-right"></i></a>
+                        <div class="car-card-body">
+                            <h6 class="fw-bold mb-1">Audi Q8 50 TDI</h6>
+                            <p class="text-muted small mb-3"><i class="fa-regular fa-calendar me-1"></i> 2021 &nbsp; <i class="fa-solid fa-gauge-high me-1"></i> 36 400 км</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">€ 68 500</span>
+                                <a href="#" class="btn btn-gold btn-sm"><i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Car 3 -->
-                <div class="col-md-6 col-lg-4 car-item" data-brand="Audi" data-engine="Дизел">
+                <div class="col-md-6 col-lg-3">
                     <div class="car-card">
-                        <div class="car-img-container">
-                            <span class="car-status-badge order">По поръчка</span>
-                            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80" alt="Audi Q8">
+                        <div class="car-card-img">
+                            <img src="images/fleet-8.png" alt="Range Rover Sport">
+                            <span class="badge-sold position-absolute bottom-0 start-0 m-2" style="font-size:0.75rem;"><i class="fa-regular fa-circle-check me-1"></i>Продаден</span>
                         </div>
-                        <div class="car-body">
-                            <h3 class="car-title">Audi Q8 50 TDI S-Line</h3>
-                            <div class="car-specs">
-                                <div class="car-spec-item"><i class="fa-regular fa-calendar"></i> 2021</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gas-pump"></i> 3.0 Дизел</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-bolt"></i> 286 к.с.</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gauge-high"></i> 64 000 км</div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price">€ 69,900</div>
-                                <a href="#" class="btn-car-action" title="Преглед"><i class="fa-solid fa-arrow-right"></i></a>
+                        <div class="car-card-body">
+                            <h6 class="fw-bold mb-1">Range Rover Sport</h6>
+                            <p class="text-muted small mb-3"><i class="fa-regular fa-calendar me-1"></i> 2022 &nbsp; <i class="fa-solid fa-gauge-high me-1"></i> 28 900 км</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">€ 84 900</span>
+                                <a href="#" class="btn btn-gold btn-sm"><i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Car 4 -->
-                <div class="col-md-6 col-lg-4 car-item" data-brand="Porsche" data-engine="Бензин">
+                <div class="col-md-6 col-lg-3">
                     <div class="car-card">
-                        <div class="car-img-container">
-                            <span class="car-status-badge">В наличност</span>
-                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Porsche Cayenne">
+                        <div class="car-card-img">
+                            <img src="images/fleet-4-Porsche.png" alt="Porsche Cayenne">
+                            <span class="badge-sold position-absolute bottom-0 start-0 m-2" style="font-size:0.75rem;"><i class="fa-regular fa-circle-check me-1"></i>Продаден</span>
                         </div>
-                        <div class="car-body">
-                            <h3 class="car-title">Porsche Cayenne Coupe</h3>
-                            <div class="car-specs">
-                                <div class="car-spec-item"><i class="fa-regular fa-calendar"></i> 2020</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gas-pump"></i> 3.0 Бензин</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-bolt"></i> 340 к.с.</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gauge-high"></i> 67 000 км</div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price">€ 82,000</div>
-                                <a href="#" class="btn-car-action" title="Преглед"><i class="fa-solid fa-arrow-right"></i></a>
+                        <div class="car-card-body">
+                            <h6 class="fw-bold mb-1">Porsche Cayenne</h6>
+                            <p class="text-muted small mb-3"><i class="fa-regular fa-calendar me-1"></i> 2020 &nbsp; <i class="fa-solid fa-gauge-high me-1"></i> 29 750 км</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">€ 75 000</span>
+                                <a href="#" class="btn btn-gold btn-sm"><i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Car 5 -->
-                <div class="col-md-6 col-lg-4 car-item" data-brand="Volvo" data-engine="Хибрид">
-                    <div class="car-card">
-                        <div class="car-img-container">
-                            <span class="car-status-badge">В наличност</span>
-                            <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80" alt="Volvo XC60">
-                        </div>
-                        <div class="car-body">
-                            <h3 class="car-title">Volvo XC60 T8 Recharge</h3>
-                            <div class="car-specs">
-                                <div class="car-spec-item"><i class="fa-regular fa-calendar"></i> 2021</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gas-pump"></i> 2.0 Хибрид</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-bolt"></i> 455 к.с.</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gauge-high"></i> 49 000 км</div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price">€ 51,900</div>
-                                <a href="#" class="btn-car-action" title="Преглед"><i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car 6 -->
-                <div class="col-md-6 col-lg-4 car-item" data-brand="Land Rover" data-engine="Дизел">
-                    <div class="car-card">
-                        <div class="car-img-container">
-                            <span class="car-status-badge order">По поръчка</span>
-                            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Range Rover">
-                        </div>
-                        <div class="car-body">
-                            <h3 class="car-title">Land Rover Range Rover</h3>
-                            <div class="car-specs">
-                                <div class="car-spec-item"><i class="fa-regular fa-calendar"></i> 2019</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gas-pump"></i> 3.0 Дизел</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-bolt"></i> 275 к.с.</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gauge-high"></i> 93 000 км</div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price">€ 64,000</div>
-                                <a href="#" class="btn-car-action" title="Преглед"><i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car 7 -->
-                <div class="col-md-6 col-lg-4 car-item" data-brand="BMW" data-engine="Бензин">
-                    <div class="car-card">
-                        <div class="car-img-container">
-                            <span class="car-status-badge">В наличност</span>
-                            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" alt="BMW M340i">
-                        </div>
-                        <div class="car-body">
-                            <h3 class="car-title">BMW M340i xDrive</h3>
-                            <div class="car-specs">
-                                <div class="car-spec-item"><i class="fa-regular fa-calendar"></i> 2022</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gas-pump"></i> 3.0 Бензин</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-bolt"></i> 374 к.с.</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gauge-high"></i> 38 000 км</div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price">€ 57,800</div>
-                                <a href="#" class="btn-car-action" title="Преглед"><i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car 8 -->
-                <div class="col-md-6 col-lg-4 car-item" data-brand="Mercedes-Benz" data-engine="Дизел">
-                    <div class="car-card">
-                        <div class="car-img-container">
-                            <span class="car-status-badge">В наличност</span>
-                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Mercedes GLE 400d">
-                        </div>
-                        <div class="car-body">
-                            <h3 class="car-title">Mercedes-Benz GLE 400d</h3>
-                            <div class="car-specs">
-                                <div class="car-spec-item"><i class="fa-regular fa-calendar"></i> 2021</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gas-pump"></i> 3.0 Дизел</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-bolt"></i> 330 к.с.</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gauge-high"></i> 61 000 км</div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price">€ 73,500</div>
-                                <a href="#" class="btn-car-action" title="Преглед"><i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car 9 -->
-                <div class="col-md-6 col-lg-4 car-item" data-brand="Audi" data-engine="Бензин">
-                    <div class="car-card">
-                        <div class="car-img-container">
-                            <span class="car-status-badge order">По поръчка</span>
-                            <img src="https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=800&q=80" alt="Audi RS6">
-                        </div>
-                        <div class="car-body">
-                            <h3 class="car-title">Audi RS6 Avant Quattro</h3>
-                            <div class="car-specs">
-                                <div class="car-spec-item"><i class="fa-regular fa-calendar"></i> 2020</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gas-pump"></i> 4.0 Бензин</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-bolt"></i> 600 к.с.</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gauge-high"></i> 56 000 км</div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price">€ 112,000</div>
-                                <a href="#" class="btn-car-action" title="Преглед"><i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car 10 -->
-                <div class="col-md-6 col-lg-4 car-item" data-brand="BMW" data-engine="Електричен">
-                    <div class="car-card">
-                        <div class="car-img-container">
-                            <span class="car-status-badge">В наличност</span>
-                            <img src="https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=800&q=80" alt="BMW i5 M60">
-                        </div>
-                        <div class="car-body">
-                            <h3 class="car-title">BMW i5 M60 xDrive</h3>
-                            <div class="car-specs">
-                                <div class="car-spec-item"><i class="fa-regular fa-calendar"></i> 2024</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-plug"></i> Електричен</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-bolt"></i> 610 к.с.</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gauge-high"></i> 12 500 км</div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price">€ 95,000</div>
-                                <a href="#" class="btn-car-action" title="Преглед"><i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car 11 -->
-                <div class="col-md-6 col-lg-4 car-item" data-brand="Tesla" data-engine="Електричен">
-                    <div class="car-card">
-                        <div class="car-img-container">
-                            <span class="car-status-badge">В наличност</span>
-                            <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80" alt="Tesla Model X">
-                        </div>
-                        <div class="car-body">
-                            <h3 class="car-title">Tesla Model X Plaid</h3>
-                            <div class="car-specs">
-                                <div class="car-spec-item"><i class="fa-regular fa-calendar"></i> 2022</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-plug"></i> Електричен</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-bolt"></i> 670 к.с.</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gauge-high"></i> 28 000 км</div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price">€ 88,900</div>
-                                <a href="#" class="btn-car-action" title="Преглед"><i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car 12 -->
-                <div class="col-md-6 col-lg-4 car-item" data-brand="BMW" data-engine="Хибрид">
-                    <div class="car-card">
-                        <div class="car-img-container">
-                            <span class="car-status-badge">В наличност</span>
-                            <img src="https://images.unsplash.com/photo-1523983388277-336a66bf9bcd?auto=format&fit=crop&w=800&q=80" alt="BMW 330e">
-                        </div>
-                        <div class="car-body">
-                            <h3 class="car-title">BMW 330e iPerformance</h3>
-                            <div class="car-specs">
-                                <div class="car-spec-item"><i class="fa-regular fa-calendar"></i> 2021</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gas-pump"></i> Хибрид</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-bolt"></i> 292 к.с.</div>
-                                <div class="car-spec-item"><i class="fa-solid fa-gauge-high"></i> 46 000 км</div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price">€ 41,200</div>
-                                <a href="#" class="btn-car-action" title="Преглед"><i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- Pagination -->
-            <div class="pagination-container">
-                <a href="#" class="page-btn"><i class="fa-solid fa-chevron-left"></i></a>
-                <a href="#" class="page-btn active">1</a>
-                <a href="#" class="page-btn">2</a>
-                <a href="#" class="page-btn">3</a>
-                <a href="#" class="page-btn">4</a>
-                <a href="#" class="page-btn">5</a>
-                <span class="px-2 text-muted">...</span>
-                <a href="#" class="page-btn">42</a>
-                <a href="#" class="page-btn"><i class="fa-solid fa-chevron-right"></i></a>
+            <!-- Bottom Highlights Row -->
+            <div class="row g-4 pt-4 border-top">
+                <div class="col-6 col-md-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="fa-solid fa-car fs-3 text-secondary"></i>
+                        <div>
+                            <h6 class="fw-bold mb-0 small">Проверени автомобили</h6>
+                            <small class="text-muted" style="font-size:0.75rem;">С реална история и документи</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="fa-solid fa-truck-front fs-3 text-secondary"></i>
+                        <div>
+                            <h6 class="fw-bold mb-0 small">Доставка до България</h6>
+                            <small class="text-muted" style="font-size:0.75rem;">Ние се грижим за целия процес</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="fa-solid fa-file-contract fs-3 text-secondary"></i>
+                        <div>
+                            <h6 class="fw-bold mb-0 small">Регистрация и документи</h6>
+                            <small class="text-muted" style="font-size:0.75rem;">Пълно съдействие</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="fa-solid fa-headset fs-3 text-secondary"></i>
+                        <div>
+                            <h6 class="fw-bold mb-0 small">Лично отношение</h6>
+                            <small class="text-muted" style="font-size:0.75rem;">Консултация от А до Я</small>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row g-4 mb-5">
@@ -747,7 +993,7 @@
                     <ul>
                         <li><a href="index.html">Начало</a></li>
                         <li><a href="in-stock.html">В наличност</a></li>
-                        <li><a href="#">Продадени</a></li>
+                        <li><a href="sold-cars.html">Продадени</a></li>
                         <li><a href="process.html">Нашият процес</a></li>
                         <li><a href="about.html">За нас</a></li>
                         <li><a href="contact.html">Контакти</a></li>
@@ -787,25 +1033,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Simple client-side filter logic demonstration
-        function applyFilters() {
-            const brand = document.getElementById('brandSelect').value.toLowerCase();
-            const engine = document.getElementById('engineSelect').value.toLowerCase();
-            const cars = document.querySelectorAll('.car-item');
+        const galleryImages = [
+            'images/fleet-5.jpg',
+            'images/fleet-6.png',
+            'images/fleet-7.png',
+            'images/fleet-9.png',
+            'images/fleet-1-bmw.png',
+            'images/about-hero-image.jpg',
+            'images/fleet-6.png',
+            'images/fleet-9.png',
+            'images/fleet-7.png'
+        ];
+        let currentSlide = 0;
 
-            cars.forEach(car => {
-                const carBrand = car.getAttribute('data-brand').toLowerCase();
-                const carEngine = car.getAttribute('data-engine').toLowerCase();
+        function setGallerySlide(index) {
+            currentSlide = index;
+            document.getElementById('mainGalleryImg').src = galleryImages[currentSlide];
+            document.getElementById('galleryCounter').textContent = (currentSlide + 1) + '/16';
 
-                let matchesBrand = !brand || carBrand.includes(brand);
-                let matchesEngine = !engine || carEngine.includes(engine);
-
-                if (matchesBrand && matchesEngine) {
-                    car.style.display = 'block';
-                } else {
-                    car.style.display = 'none';
-                }
+            document.querySelectorAll('#thumbGrid .thumb-item').forEach((item, i) => {
+                item.classList.toggle('active-thumb', i === currentSlide);
             });
+        }
+
+        function slideGallery(direction) {
+            const next = (currentSlide + direction + galleryImages.length) % galleryImages.length;
+            setGallerySlide(next);
         }
     </script>
 </body>

@@ -160,6 +160,29 @@ body {
     border-left: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+@media (max-width: 767.98px) {
+    .hero-section {
+        padding-top: 120px;
+    }
+    .hero-title {
+        font-size: 2.1rem;
+    }
+    .hero-desc {
+        max-width: 100% !important;
+        font-size: 15px;
+    }
+    .hero-pillars-row {
+        margin-top: 30px;
+        padding: 20px 0;
+    }
+    .hero-pillars-row .col-6 {
+        margin-bottom: 18px;
+    }
+    .pillar-divider {
+        border-left: none;
+    }
+}
+
 /* General Section Layouts */
 .content-section {
     padding: 90px 0;
@@ -543,6 +566,18 @@ footer ul li a:hover {
     overflow-wrap: break-word;
     text-align: center;
 }
+@media (max-width: 767.98px) {
+    .timeline-container {
+        flex-direction: column;
+        gap: 35px;
+    }
+    .timeline-container::before {
+        display: none;
+    }
+    .timeline-step {
+        padding: 0;
+    }
+}
 
 /* Benefits Grid */
 .benefits-section { padding: 90px 0; background-color: #ffffff; }
@@ -561,7 +596,7 @@ footer ul li a:hover {
 /* Testimonials + CTA Section */
 .testimonials-section {
     background: linear-gradient(rgba(5, 8, 14, 0.45), rgba(5, 8, 14, 0.45)),
-                url('images/home -bg-image-3.jpg') center/cover no-repeat;
+                url('images/home-bg-image-3.jpg') center/cover no-repeat;
     color: #ffffff;
     padding: 70px 0;
 }
@@ -763,6 +798,20 @@ footer ul li a:hover {
 @keyframes floatPin {
     0%, 100% { transform: translate(-50%, -50%); }
     50% { transform: translate(-50%, -58%); }
+}
+@media (max-width: 767.98px) {
+    .map-section {
+        min-height: 0;
+        display: block;
+    }
+    .map-overlay {
+        position: relative;
+        background: rgba(5, 7, 12, 0.94);
+        padding: 60px 0;
+    }
+    .map-pin-badge {
+        display: none;
+    }
 }
 
 /* FAQ Section (flat list, plus/minus toggle, all closed by default) */

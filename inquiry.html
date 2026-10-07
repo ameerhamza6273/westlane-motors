@@ -52,80 +52,31 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Header */
+        /* Hero Header (uses shared .hero-title / .hero-pillars-row classes from style.css) */
         .hero-section {
-            background: linear-gradient(rgba(11, 15, 23, 0.8), rgba(11, 15, 23, 0.95)),
-                        url('https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            padding: 150px 0 60px;
+            background:
+                linear-gradient(100deg, rgba(11, 15, 23, 0.88) 0%, rgba(11, 15, 23, 0.6) 32%, rgba(11, 15, 23, 0.18) 58%, rgba(11, 15, 23, 0.08) 100%),
+                linear-gradient(180deg, rgba(11, 15, 23, 0.2) 0%, rgba(11, 15, 23, 0.02) 30%, rgba(11, 15, 23, 0.25) 65%, rgba(11, 15, 23, 0.95) 100%),
+                url('images/about-hero-image.jpg') center/cover no-repeat;
+            padding: 150px 0 0 0;
             color: #ffffff;
-        }
-
-        .hero-tag {
-            color: var(--primary-gold);
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 800;
-            margin: 10px 0 20px;
-            line-height: 1.15;
         }
 
         .hero-desc {
-            color: #94a3b8;
-            font-size: 1rem;
+            color: #d1d5db;
+            font-size: 1.05rem;
             max-width: 550px;
-            line-height: 1.6;
-        }
-
-        .hero-pill-bar {
-            background-color: rgba(18, 24, 36, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 50px;
-            backdrop-filter: blur(10px);
-        }
-
-        .pill-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .pill-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background-color: rgba(223, 177, 117, 0.1);
-            color: var(--primary-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-
-        .pill-text {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin: 0;
-            line-height: 1.3;
+            line-height: 1.7;
         }
 
         /* Form Wizard Section */
-        .form-section { padding: 80px 0; }
+        .form-section { padding: 50px 0; }
 
         .wizard-card {
             background: #ffffff;
             border-radius: 16px;
             border: 1px solid var(--border-color);
-            padding: 35px;
+            padding: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
 
@@ -133,10 +84,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 30px;
-            margin-bottom: 35px;
+            flex-wrap: wrap;
+            gap: 14px 30px;
+            margin-bottom: 15px;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 20px;
+        }
+        @media (max-width: 575.98px) {
+            .step-indicators {
+                gap: 10px 16px;
+                font-size: 0.8rem;
+            }
         }
 
         .step-item {
@@ -172,7 +130,7 @@
             font-size: 0.8rem;
             font-weight: 700;
             color: var(--text-dark);
-            margin-bottom: 6px;
+            margin-bottom: 3px;
         }
 
         .form-control, .form-select {
@@ -191,32 +149,80 @@
 
         /* Dark Process Grid */
         .dark-process-section {
-            background-color: var(--dark-bg);
+            background: linear-gradient(rgba(5, 8, 14, 0.55), rgba(5, 8, 14, 0.9)),
+                        url('images/home-bg-image-3.jpg') center/cover no-repeat;
             color: #ffffff;
             padding: 80px 0;
         }
 
-        .process-box {
-            background-color: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 25px 20px;
-            height: 100%;
+        .process-timeline {
+            position: relative;
+            display: flex;
+            margin-top: 50px;
         }
 
-        .process-step-num {
-            font-size: 0.75rem;
-            font-weight: 800;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--primary-gold);
-            padding: 4px 10px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 15px;
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 5%;
+            right: 5%;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.2);
+            z-index: 1;
+        }
+
+        .process-step {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            padding: 0 14px;
+        }
+
+        .process-step-badges {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .process-step-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .process-step-icon {
+            font-size: 26px;
+            color: #ffffff;
         }
 
         /* Features Section */
         .features-section { padding: 80px 0; background-color: #ffffff; }
+
+        .benefit-icon-circle {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .benefit-icon-circle .benefit-icon {
+            margin-bottom: 0;
+            font-size: 1.4rem;
+        }
 
         .feature-item-icon {
             font-size: 1.5rem;
@@ -269,15 +275,121 @@
             transition: all 0.4s ease;
         }
 
-        .country-card::after {
-            content: '';
+       
+
+
+        .country-flag-badge {
             position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(11,15,23,0.9), rgba(11,15,23,0.2));
+            top: 14px;
+            right: 14px;
+            z-index: 3;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            background: rgba(11, 15, 23, 0.55);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            padding: 4px 8px;
+            line-height: 1;
+        }
+
+      
+
+        /* Recent Cars Section (reuses shared .car-card/.car-img-wrap/.car-title/.car-meta from style.css) */
+        .recent-cars-section { padding: 80px 0; background-color: var(--dark-bg); }
+        .recent-cars-section .car-card { background-color: transparent; border: none; }
+        .recent-cars-section .car-img-wrap { border: none; }
+        .recent-cars-section .car-title { color: #ffffff; }
+        .recent-cars-section .car-meta { color: #94a3b8; }
+        .recent-cars-section .view-details-link { color: #ffffff; border-color: rgba(255,255,255,0.2); }
+        .recent-cars-section .view-details-link:hover { color: var(--dark-bg); background-color: #ffffff; border-color: #ffffff; }
+        .recent-cars-section .nav-arrow-btn { background: transparent; border-color: rgba(255,255,255,0.3); color: #ffffff; }
+        .recent-cars-section .nav-arrow-btn:hover { background: #ffffff; color: var(--dark-bg); border-color: #ffffff; }
+        .recent-cars-section .nav-arrow-btn.disabled { opacity: 0.35; pointer-events: none; }
+
+        /* Slider track */
+        .recent-cars-track {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding-bottom: 4px;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .recent-cars-track::-webkit-scrollbar { display: none; }
+        .recent-car-slide {
+            flex: 0 0 calc(25% - 1.125rem);
+            scroll-snap-align: start;
+        }
+        @media (max-width: 991px) {
+            .recent-car-slide { flex-basis: calc(50% - 0.75rem); }
+        }
+        @media (max-width: 575px) {
+            .recent-car-slide { flex-basis: 85%; }
+        }
+        .recent-car-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(4px);
+            color: #ffffff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 20px;
             z-index: 2;
         }
 
-        .country-content { position: relative; z-index: 3; }
+        .nav-arrow-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background: #ffffff;
+            color: var(--text-dark);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .nav-arrow-btn:hover {
+            background: var(--text-dark);
+            color: #ffffff;
+            border-color: var(--text-dark);
+        }
+
+        .view-details-link {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 16px;
+            transition: all 0.2s ease;
+        }
+        .view-details-link:hover {
+            color: #ffffff;
+            background-color: var(--text-dark);
+            border-color: var(--text-dark);
+        }
+
+        /* Final CTA Section */
+        .final-cta-section {
+            background: linear-gradient(rgba(11, 15, 23, 0.55), rgba(11, 15, 23, 0.55)),
+                        url('images/inquiry-cta-image.jpg') center/cover no-repeat;
+            padding: 40px 0;
+            color: #ffffff;
+        }
 
     </style>
 </head>
@@ -298,7 +410,7 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Начало</a></li>
                     <li class="nav-item"><a class="nav-link" href="in-stock.html">В наличност</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Продадени</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sold-cars.html">Продадени</a></li>
                     <li class="nav-item"><a class="nav-link" href="process.html">Нашият процес</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">За нас</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Контакти</a></li>
@@ -311,39 +423,33 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <span class="hero-tag">НАПРАВИ ЗАПИТВАНЕ</span>
-                    <h1 class="hero-title">Намери своя автомобил<br>от Западна Европа<br>и Канада.</h1>
-                    <p class="hero-desc">Споделете с нас какъв автомобил търсите и ние ще ти предложим най-добрите наличности от доверени източници в Западна Европа и Канада.</p>
-                </div>
-            </div>
+            <span class="section-subtitle-gold">НАПРАВИ ЗАПИТВАНЕ</span>
+            <h1 class="hero-title">Намери своя автомобил<br>от Западна Европа<br><span class="text-gold-accent">и Канада.</span></h1>
+            <p class="hero-desc">Споделете с нас какъв автомобил търсите и ние ще ти предложим най-добрите наличности от доверени източници в Западна Европа и Канада.</p>
 
-            <div class="hero-pill-bar">
-                <div class="row g-3">
-                    <div class="col-md-3 col-6">
-                        <div class="pill-item">
-                            <div class="pill-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                            <p class="pill-text">Достъп до най-добри пазари и търгове</p>
-                        </div>
+            <div class="row g-3 hero-pillars-row">
+                <div class="col-6 col-lg-3">
+                    <div class="hero-pillar-item">
+                        <div class="hero-pillar-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <p class="hero-pillar-text">Достъп до най-добри пазари и търгове</p>
                     </div>
-                    <div class="col-md-3 col-6">
-                        <div class="pill-item">
-                            <div class="pill-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                            <p class="pill-text">Проверени автомобили с пълна история</p>
-                        </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="hero-pillar-item pillar-divider ps-lg-4">
+                        <div class="hero-pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <p class="hero-pillar-text">Проверени автомобили с пълна история</p>
                     </div>
-                    <div class="col-md-3 col-6">
-                        <div class="pill-item">
-                            <div class="pill-icon"><i class="fa-solid fa-headset"></i></div>
-                            <p class="pill-text">Индивидуален подход и експертна консултация</p>
-                        </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="hero-pillar-item pillar-divider ps-lg-4">
+                        <div class="hero-pillar-icon"><i class="fa-solid fa-headset"></i></div>
+                        <p class="hero-pillar-text">Индивидуален подход и експертна консултация</p>
                     </div>
-                    <div class="col-md-3 col-6">
-                        <div class="pill-item">
-                            <div class="pill-icon"><i class="fa-solid fa-truck"></i></div>
-                            <p class="pill-text">Пълно съдействие до доставка и регистрация</p>
-                        </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="hero-pillar-item pillar-divider ps-lg-4">
+                        <div class="hero-pillar-icon"><i class="fa-solid fa-truck"></i></div>
+                        <p class="hero-pillar-text">Пълно съдействие до доставка и регистрация</p>
                     </div>
                 </div>
             </div>
@@ -355,9 +461,9 @@
             <div class="row g-4 align-items-start">
                 <div class="col-lg-5">
                     <span class="text-uppercase text-muted fw-bold fs-12">ФОРМА ЗА ЗАПИТВАНЕ</span>
-                    <h2 class="fw-bold my-2 fs-2">Разкажи ни какъв автомобил търсиш</h2>
-                    <p class="text-muted fs-6 mb-4">Попълни формата и ние ще ти изпратим персонализирани предложения, включително реални наличности от Западна Европа и Канада, цени, срокове и всички детайли.</p>
-                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-4 shadow-sm" alt="BMW SUV">
+                    <h2 class="fw-bold my-2 fs-1" style="max-width:400px">Разкажи ни какъв автомобил търсиш</h2>
+                    <p class="text-muted fs-6 mb-4" style="max-width:400px">Попълни формата и ние ще ти изпратим персонализирани предложения, включително реални наличности от Западна Европа и Канада, цени, срокове и всички детайли.</p>
+                    <img src="images/inquiry-1-img.jpg" class="img-fluid rounded-4 shadow-sm" alt="Westlane Motors">
                 </div>
 
                 <div class="col-lg-7">
@@ -463,36 +569,345 @@
             <h2 class="fw-bold my-2 fs-2 text-white">От запитване до ключове</h2>
             <p class="text-secondary mb-5">Ясен, сигурен и прозрачен процес.</p>
 
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="process-box">
-                        <span class="process-step-num">01 <i class="fa-solid fa-file-lines ms-1"></i></span>
-                        <h5 class="fw-bold text-white mb-2">Запитване</h5>
-                        <p class="text-secondary small mb-0">Споделете с нас какъв автомобил търсите и какви са вашите изисквания.</p>
+            <div class="process-timeline d-none d-lg-flex">
+                <div class="process-step">
+                    <div class="process-step-badges">
+                        <div class="process-step-circle">01</div>
+                        <i class="fa-solid fa-file-lines process-step-icon"></i>
+                    </div>
+                    <h5 class="fw-bold text-white mb-2">Запитване</h5>
+                    <p class="text-secondary small mb-0">Споделете с нас какъв автомобил търсите и какви са вашите изисквания.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-badges">
+                        <div class="process-step-circle">02</div>
+                        <i class="fa-solid fa-magnifying-glass process-step-icon"></i>
+                    </div>
+                    <h5 class="fw-bold text-white mb-2">Намиране и оферта</h5>
+                    <p class="text-secondary small mb-0">Ние търсим най-добрите наличности от Западна Европа и Канада и ви изпращаме оферти.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-badges">
+                        <div class="process-step-circle">03</div>
+                        <i class="fa-solid fa-car process-step-icon"></i>
+                    </div>
+                    <h5 class="fw-bold text-white mb-2">Проверка</h5>
+                    <p class="text-secondary small mb-0">Проверяваме историята, състоянието и всички документи.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-badges">
+                        <div class="process-step-circle">04</div>
+                        <i class="fa-solid fa-truck process-step-icon"></i>
+                    </div>
+                    <h5 class="fw-bold text-white mb-2">Доставка и регистрация</h5>
+                    <p class="text-secondary small mb-0">Организираме транспорта, митническото оформяне и регистрацията в България.</p>
+                </div>
+            </div>
+
+            <!-- Mobile stacked fallback -->
+            <div class="row g-4 d-lg-none">
+                <div class="col-md-6">
+                    <div class="process-step-badges">
+                        <div class="process-step-circle">01</div>
+                        <i class="fa-solid fa-file-lines process-step-icon"></i>
+                    </div>
+                    <h5 class="fw-bold text-white mb-2">Запитване</h5>
+                    <p class="text-secondary small mb-0">Споделете с нас какъв автомобил търсите и какви са вашите изисквания.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="process-step-badges">
+                        <div class="process-step-circle">02</div>
+                        <i class="fa-solid fa-magnifying-glass process-step-icon"></i>
+                    </div>
+                    <h5 class="fw-bold text-white mb-2">Намиране и оферта</h5>
+                    <p class="text-secondary small mb-0">Ние търсим най-добрите наличности от Западна Европа и Канада и ви изпращаме оферти.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="process-step-badges">
+                        <div class="process-step-circle">03</div>
+                        <i class="fa-solid fa-car process-step-icon"></i>
+                    </div>
+                    <h5 class="fw-bold text-white mb-2">Проверка</h5>
+                    <p class="text-secondary small mb-0">Проверяваме историята, състоянието и всички документи.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="process-step-badges">
+                        <div class="process-step-circle">04</div>
+                        <i class="fa-solid fa-truck process-step-icon"></i>
+                    </div>
+                    <h5 class="fw-bold text-white mb-2">Доставка и регистрация</h5>
+                    <p class="text-secondary small mb-0">Организираме транспорта, митническото оформяне и регистрацията в България.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <span class="text-uppercase text-muted fw-bold fs-12">ЗАЩО ДА ИЗБЕРЕТЕ WESTLANE MOTORS</span>
+            <h2 class="fw-bold my-2 fs-2 mb-5">Вашето предимство при внос на автомобили</h2>
+
+            <div class="row g-4 row-cols-2 row-cols-md-3 row-cols-lg-5">
+                <div class="col">
+                    <div class="benefit-item">
+                        <div class="benefit-icon-circle"><i class="fa-solid fa-gem benefit-icon"></i></div>
+                        <h5 class="fw-bold fs-6">Проверени автомобили</h5>
+                        <p class="text-muted small mb-0">Пълна история, реални километри и проверка в официални системи.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="process-box">
-                        <span class="process-step-num">02 <i class="fa-solid fa-magnifying-glass ms-1"></i></span>
-                        <h5 class="fw-bold text-white mb-2">Намиране и оферта</h5>
-                        <p class="text-secondary small mb-0">Ние търсим най-добрите наличности от Западна Европа и Канада и ви изпращаме оферти.</p>
+                <div class="col">
+                    <div class="benefit-item">
+                        <div class="benefit-icon-circle"><i class="fa-solid fa-globe benefit-icon"></i></div>
+                        <h5 class="fw-bold fs-6">Достъп до премиум пазари</h5>
+                        <p class="text-muted small mb-0">Работим с водещи търгове и партньори в Западна Европа и Канада.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="process-box">
-                        <span class="process-step-num">03 <i class="fa-solid fa-car ms-1"></i></span>
-                        <h5 class="fw-bold text-white mb-2">Проверка</h5>
-                        <p class="text-secondary small mb-0">Проверяваме историята, състоянието и всички документи.</p>
+                <div class="col">
+                    <div class="benefit-item">
+                        <div class="benefit-icon-circle"><i class="fa-solid fa-shield-halved benefit-icon"></i></div>
+                        <h5 class="fw-bold fs-6">Прозрачен процес</h5>
+                        <p class="text-muted small mb-0">Ясна комуникация, реални срокове и без скрити разходи.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="process-box">
-                        <span class="process-step-num">04 <i class="fa-solid fa-truck ms-1"></i></span>
-                        <h5 class="fw-bold text-white mb-2">Доставка и регистрация</h5>
-                        <p class="text-secondary small mb-0">Организираме транспорта, митническото оформяне и регистрацията в България.</p>
+                <div class="col">
+                    <div class="benefit-item">
+                        <div class="benefit-icon-circle"><i class="fa-solid fa-headset benefit-icon"></i></div>
+                        <h5 class="fw-bold fs-6">Лично отношение</h5>
+                        <p class="text-muted small mb-0">Индивидуална консултация и съдействие на всеки етап.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="benefit-item">
+                        <div class="benefit-icon-circle"><i class="fa-solid fa-file-circle-check benefit-icon"></i></div>
+                        <h5 class="fw-bold fs-6">Пълно съдействие</h5>
+                        <p class="text-muted small mb-0">От покупката до доставка и регистрация в България.</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Recently Added Cars Section -->
+    <section class="recent-cars-section">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+                <div>
+                    <span class="text-uppercase text-secondary fw-bold fs-12">ПРИМЕРНИ АВТОМОБИЛИ</span>
+                    <h2 class="fw-bold my-1 fs-3 text-white">Последно внесени по запитване</h2>
+                </div>
+                <div class="d-flex gap-2">
+                    <button type="button" class="nav-arrow-btn" id="recentCarsPrev" aria-label="Предишен"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button type="button" class="nav-arrow-btn" id="recentCarsNext" aria-label="Следващ"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="recent-cars-track" id="recentCarsTrack">
+                <div class="recent-car-slide">
+                    <div class="car-card">
+                        <div class="car-img-wrap">
+                            <span class="recent-car-badge">Продаден</span>
+                            <img src="images/fleet-1-bmw.png" alt="BMW X5">
+                        </div>
+                        <div class="car-body">
+                            <h5 class="car-title">BMW X5 30d</h5>
+                            <p class="car-meta mb-2">2022 &nbsp;|&nbsp; 3.0 Дизел &nbsp;|&nbsp; 286 к.с.</p>
+                            <a href="in-stock.html" class="view-details-link mt-2">Виж подробности <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="recent-car-slide">
+                    <div class="car-card">
+                        <div class="car-img-wrap">
+                            <span class="recent-car-badge">Продаден</span>
+                            <img src="images/fleet-2-Mercedes.png" alt="Mercedes-Benz E 300 de">
+                        </div>
+                        <div class="car-body">
+                            <h5 class="car-title">Mercedes-Benz E 300 de</h5>
+                            <p class="car-meta mb-2">2021 &nbsp;|&nbsp; 2.0 Хибрид &nbsp;|&nbsp; 320 к.с.</p>
+                            <a href="in-stock.html" class="view-details-link mt-2">Виж подробности <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="recent-car-slide">
+                    <div class="car-card">
+                        <div class="car-img-wrap">
+                            <span class="recent-car-badge">Продаден</span>
+                            <img src="images/fleet-3-Audi.png" alt="Audi Q8">
+                        </div>
+                        <div class="car-body">
+                            <h5 class="car-title">Audi Q8 50 TDI</h5>
+                            <p class="car-meta mb-2">2021 &nbsp;|&nbsp; 3.0 Дизел &nbsp;|&nbsp; 286 к.с.</p>
+                            <a href="in-stock.html" class="view-details-link mt-2">Виж подробности <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="recent-car-slide">
+                    <div class="car-card">
+                        <div class="car-img-wrap">
+                            <span class="recent-car-badge">Продаден</span>
+                            <img src="images/fleet-4-Porsche.png" alt="Porsche Cayenne">
+                        </div>
+                        <div class="car-body">
+                            <h5 class="car-title">Porsche Cayenne</h5>
+                            <p class="car-meta mb-2">2020 &nbsp;|&nbsp; 3.0 Бензин &nbsp;|&nbsp; 340 к.с.</p>
+                            <a href="in-stock.html" class="view-details-link mt-2">Виж подробности <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="recent-car-slide">
+                    <div class="car-card">
+                        <div class="car-img-wrap">
+                            <span class="recent-car-badge">Продаден</span>
+                            <img src="images/fleet-8.png" alt="Land Rover Range Rover">
+                        </div>
+                        <div class="car-body">
+                            <h5 class="car-title">Land Rover Range Rover</h5>
+                            <p class="car-meta mb-2">2019 &nbsp;|&nbsp; 3.0 Дизел &nbsp;|&nbsp; 275 к.с.</p>
+                            <a href="in-stock.html" class="view-details-link mt-2">Виж подробности <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countries Section -->
+    <section class="countries-section">
+        <div class="container">
+            <span class="text-uppercase text-muted fw-bold fs-12">ОТКЪДЕ ВНАСЯМЕ</span>
+            <h2 class="fw-bold my-2 fs-2 mb-5">Надеждни източници в Западна Европа и Канада</h2>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="country-card">
+                        <img src="images/flag-1.jpg" alt="Белгия">
+                        <span class="country-flag-badge">GE</span>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="country-card">
+                        <img src="images/flag-2.jpg" alt="Холандия">
+                        <span class="country-flag-badge">NE</span>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="country-card">
+                        <img src="images/flag-3.jpg" alt="Белгия">
+                        <span class="country-flag-badge">🇧🇪</span>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="country-card">
+                        <img src="images/flag-4.jpg" alt="Канада">
+                        <span class="country-flag-badge">🇨🇦</span>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <span class="text-uppercase text-muted fw-bold fs-12">ЧЕСТО ЗАДАВАНИ ВЪПРОСИ</span>
+                    <h2 class="fw-bold my-3 fs-2">Имате въпроси?</h2>
+                    <p class="text-muted mb-4">Намерете отговори на най-често задаваните въпроси или се свържете с нас.</p>
+                    <a href="contact.html" class="btn btn-gold">Свържете се с нас <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iqfaq1">
+                                    Колко време отнема вносът на автомобил?
+                                </button>
+                            </h2>
+                            <div id="iqfaq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Обикновено процесът по внос, проверка и доставка от Западна Европа отнема между 7 и 14 работни дни. За автомобили от Канада срокът е между 30 и 45 дни.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iqfaq2">
+                                    Мога ли да поръчам конкретен модел?
+                                </button>
+                            </h2>
+                            <div id="iqfaq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Да, предлагаме напълно персонализирано търсене според вашите конкретни изисквания за марка, модел, година, екстри, цвят и бюджет.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iqfaq3">
+                                    Каква е крайната цена?
+                                </button>
+                            </h2>
+                            <div id="iqfaq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Преди да стартираме процеса, ви предоставяме пълна калкулация без скрити такси – покупка, транспорт, митнически такси и нашия хонорар.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iqfaq4">
+                                    Проверявате ли историята на автомобила?
+                                </button>
+                            </h2>
+                            <div id="iqfaq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Всеки автомобил преминава през задължителна техническа и сервизна проверка, включително преглед на история за щети и реални километри.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iqfaq5">
+                                    Мога ли да финансирам покупката?
+                                </button>
+                            </h2>
+                            <div id="iqfaq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Да, работим с водещи лизингови компании и банки в България, за да ви предложим гъвкави условия за избрания автомобил.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#iqfaq6">
+                                    С какви гаранции работите?
+                                </button>
+                            </h2>
+                            <div id="iqfaq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Работим с официални представителства и доказани партньори. Всеки автомобил пристига с прозрачна документация и гаранция за реален пробег.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta-section">
+        <div class="container">
+            <span class="text-uppercase text-secondary fw-bold fs-12">ГОТОВИ ЛИ СТЕ?</span>
+            <h2 class="fw-bold text-white my-3 fs-1">Нека намерим вашия<br>следващ автомобил.</h2>
+            <p class="text-secondary mb-4" style="max-width:500px;">Попълнете формата за запитване и нашият екип ще се свърже с вас в най-кратък срок с индивидуални предложения.</p>
+            <a href="#form" class="btn btn-gold py-3 px-4">Направи запитване <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </section>
 
@@ -520,7 +935,7 @@
                     <ul>
                         <li><a href="index.html">Начало</a></li>
                         <li><a href="in-stock.html">В наличност</a></li>
-                        <li><a href="#">Продадени</a></li>
+                        <li><a href="sold-cars.html">Продадени</a></li>
                         <li><a href="process.html">Нашият процес</a></li>
                         <li><a href="about.html">За нас</a></li>
                         <li><a href="contact.html">Контакти</a></li>
@@ -557,6 +972,33 @@
     </footer>
 
     <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        (function () {
+            const track = document.getElementById('recentCarsTrack');
+            const prevBtn = document.getElementById('recentCarsPrev');
+            const nextBtn = document.getElementById('recentCarsNext');
+            if (!track || !prevBtn || !nextBtn) return;
+
+            function slideStep() {
+                const slide = track.querySelector('.recent-car-slide');
+                const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0);
+                return slide ? slide.getBoundingClientRect().width + gap : 300;
+            }
+
+            function updateArrows() {
+                const maxScroll = track.scrollWidth - track.clientWidth - 2;
+                prevBtn.classList.toggle('disabled', track.scrollLeft <= 2);
+                nextBtn.classList.toggle('disabled', track.scrollLeft >= maxScroll);
+            }
+
+            prevBtn.addEventListener('click', () => track.scrollBy({ left: -slideStep(), behavior: 'smooth' }));
+            nextBtn.addEventListener('click', () => track.scrollBy({ left: slideStep(), behavior: 'smooth' }));
+            track.addEventListener('scroll', updateArrows);
+            window.addEventListener('resize', updateArrows);
+            updateArrows();
+        })();
+    </script>
 </body>
 </html>
